@@ -10,9 +10,9 @@ dataset = "scifact/scifact" #this is where we will change the dataset that we us
 doc_folder_path = dataset+ '/corpus.jsonl'
 query_folder_path = dataset+ '/queries.jsonl'
 #to be built
-index_folder_path = 'inverted_index.jsonl'
-preprocessed_docs_path = 'preprocessed_docs.jsonl'
-preprocessed_queries_path = 'preprocessed_queries.jsonl'
+index_folder_path = 'inverted_index.json'
+preprocessed_docs_path = 'preprocessed_docs.json'
+preprocessed_queries_path = 'preprocessed_queries.json'
 
 print("Parsing the dataset...")
 documents=[]
