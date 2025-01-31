@@ -9,6 +9,7 @@ from nltk.stem import PorterStemmer
 
 
 nltk.download('stopwords')
+nltk.download('punkt_tab')
 
 #using a set as it is easier to look up things from (in O(1) as opposed to O(n) from a list)
 stop_words = set(stopwords.words('english'))
