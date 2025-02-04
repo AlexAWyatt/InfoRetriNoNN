@@ -1,18 +1,38 @@
+"""TODO: Things to make parameters that are decided by driver function
+- stopword doc
+- stemmer used
+- boolean switch for whether to stem words or not (default to stemming on)
+- seems like lemmatization doesn't make sense for info retrieval - stick to stemming
+"""
+
+
 #Most of the code here is from the assignement's example.
 import json
 
 #imports go here
+import os
 import nltk #natural language toolkit
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
+relative_dir = os.getcwd()
+dataset_dir = relative_dir + "\\data"
 
 nltk.download('stopwords')
 nltk.download('punkt_tab')
 
 #using a set as it is easier to look up things from (in O(1) as opposed to O(n) from a list)
 stop_words = set(stopwords.words('english'))
+
+# read in Provided StopWords List
+stop_words_big = set()
+with open(dataset_dir + "\\StopWords.txt") as file:
+    for line in file:
+        stop_words_big.add(line.rstrip())
+
+
+
 stemmer = PorterStemmer()
 #print(stop_words)
 

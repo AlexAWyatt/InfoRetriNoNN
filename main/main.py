@@ -6,14 +6,17 @@ import os
 from parser import *
 from preprocessing import *
 
+
+
 #dataset logistics - someone please check this
-dataset = "scifact/scifact" #this is where we will change the dataset that we use
-doc_folder_path = dataset+ '/corpus.jsonl'
-query_folder_path = dataset+ '/queries.jsonl'
+relative_dir = os.getcwd()
+dataset = relative_dir + "\\data\\scifact" #this is where we will change the dataset that we use
+doc_folder_path = dataset+ '\\corpus.jsonl'
+query_folder_path = dataset+ '\\queries.jsonl'
 #to be built
-index_folder_path = 'inverted_index.json'
-preprocessed_docs_path = 'preprocessed_docs.json'
-preprocessed_queries_path = 'preprocessed_queries.json'
+index_folder_path = '\\inverted_index.json'
+preprocessed_docs_path = '\\preprocessed_docs.json'
+preprocessed_queries_path = '\\preprocessed_queries.json'
 
 print("Parsing the dataset...")
 documents=[]
