@@ -36,6 +36,8 @@ def parse_documents_from_file(file_path):
     return parsed_docs
 
 #taking each query and adding them to our document
+# TODO: It seems we need some knowledge of the queries to parse them properly - 
+# we'll have to research what is expected because current parse result is mostly empty (nothing identified for 'query' and 'narrative' - only 'num' and 'title' populated)
 def parse_query(query_line):
     query = json.loads(query_line)
     parsed_query = {

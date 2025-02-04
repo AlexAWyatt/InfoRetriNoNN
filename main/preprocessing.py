@@ -1,19 +1,16 @@
-"""TODO: Things to make parameters that are decided by driver function
-- stopword doc
-- stemmer used
-- boolean switch for whether to stem words or not (default to stemming on)
+"""TODO:
 - seems like lemmatization doesn't make sense for info retrieval - stick to stemming
 """
-
 
 #Most of the code here is from the assignement's example.
 import json
 
 #imports go here
+import re
 import os
 import nltk #natural language toolkit
 from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+from nltk.tokenize import word_tokenize, RegexpTokenizer
 from nltk.stem import PorterStemmer, LancasterStemmer
 from nltk.stem.snowball import EnglishStemmer
 
@@ -26,12 +23,6 @@ nltk.download('punkt_tab')
 #using a set as it is easier to look up things from (in O(1) as opposed to O(n) from a list)
 stop_words = set(stopwords.words('english'))
 
-# read in Provided StopWords List
-stop_words_big = set()
-with open(dataset_dir + "\\StopWords.txt") as file:
-    for line in file:
-        stop_words_big.add(line.rstrip())
-
 #tokenising the texts using nltk's word_tokenize
 def tokenize(text):
     tokens = word_tokenize(text.lower())
@@ -39,25 +30,47 @@ def tokenize(text):
 
 #stemming each tokens in the list of tokens sent
 def stem_tokens(tokens, stemmer = PorterStemmer()):
+    
     return [stemmer.stem(token) for token in tokens]
 
-#??? TODO add comments
-def remove_extras(tokens):
-    # TODO: It seems like 'no_queri' and 'no_narr' are related to parser but these are not precisely whats listed there and there is an 'i' in query here for some reason.
-    return [token for token in tokens if token not in ['no_queri','no_narr']]
+# remove stopwords through reference to relevant doc
+def remove_stopwords(tokens, stopwords, verbose = False):
+
+    no_stopwords = [token for token in tokens if token not in stopwords]
+
+    if verbose:
+        print(f"Number of stop words removed: {len(tokens) - len(no_stopwords)}")
+    return no_stopwords
+
+#Remove tokens that signify absence of data
+def remove_extras(tokens, verbose = False):
+
+    # remove tokens that were only added to signify a lack of data
+    no_signifiers =  [token for token in tokens if token not in ['notitle','notext','noquery', 'nonarrative']]
+
+    if verbose:
+        print(f"Number of empty data labels removed: {len(tokens) - len(no_signifiers)}")
+    return no_signifiers
 
 #preprocessing the text by turning it into "good" tokens
-def preprocess_text(text, stem_text = True, stemmer = PorterStemmer()):
+def preprocess_text(text, removestopwords = True, stopwords = stop_words, stem_text = True, stemmer = PorterStemmer()):
+    # remove all non letter non whitespace characters using regex
+    text = re.sub(r'[^a-zA-Z\s]', '', text)
     tokens = tokenize(text)
+
+    tokens = remove_extras(tokens)
 
     # If stemming is enabled, stem the tokens with the chosen stemmer
     if stem_text:
         tokens = stem_tokens(tokens, stemmer)
-    tokens = remove_extras(tokens)
+    
+    # If stopword removal is enabled, do so
+    if removestopwords:
+        tokens = remove_stopwords(tokens, stopwords)
     return tokens
 
 #preprocessing all of the documents now
-def preprocess_documents(documents, stem_text = True, stemmer = PorterStemmer()):
+def preprocess_documents(documents, removestopwords = True, stopwords = stop_words, stem_text = True, stemmer = PorterStemmer()):
     previous_id = 'x'
     count = 1
 
@@ -67,17 +80,17 @@ def preprocess_documents(documents, stem_text = True, stemmer = PorterStemmer())
         if file_id != previous_id:
             previous_id = file_id
             count += 1
-        doc['TEXT'] = preprocess_text(doc['TEXT'], stem_text, stemmer)
-        doc['HEAD'] = preprocess_text(doc['HEAD'], stem_text, stemmer)
+        doc['TEXT'] = preprocess_text(doc['TEXT'], removestopwords, stopwords, stem_text, stemmer)
+        doc['HEAD'] = preprocess_text(doc['HEAD'], removestopwords, stopwords, stem_text, stemmer)
 
     return documents
 
 #preprocessing queries
-def preprocess_queries(queries, stem_text = True, stemmer = PorterStemmer()):
+def preprocess_queries(queries, removestopwords = True, stopwords = stop_words, stem_text = True, stemmer = PorterStemmer()):
     for query in queries:
-        query['title'] = preprocess_text(query['title'], stem_text, stemmer)
-        query['query'] = preprocess_text(query['query'], stem_text, stemmer)
-        query['narrative'] = preprocess_text(query['narrative'], stem_text, stemmer)
+        query['title'] = preprocess_text(query['title'], removestopwords, stopwords, stem_text, stemmer)
+        query['query'] = preprocess_text(query['query'], removestopwords, stopwords, stem_text, stemmer)
+        query['narrative'] = preprocess_text(query['narrative'], removestopwords, stopwords, stem_text, stemmer)
     return queries
 
 def save_preprocessed_data(data, file_path):
