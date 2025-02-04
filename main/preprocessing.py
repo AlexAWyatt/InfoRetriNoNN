@@ -14,7 +14,8 @@ import os
 import nltk #natural language toolkit
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
-from nltk.stem import PorterStemmer
+from nltk.stem import PorterStemmer, LancasterStemmer
+from nltk.stem.snowball import EnglishStemmer
 
 relative_dir = os.getcwd()
 dataset_dir = relative_dir + "\\data"
@@ -31,33 +32,32 @@ with open(dataset_dir + "\\StopWords.txt") as file:
     for line in file:
         stop_words_big.add(line.rstrip())
 
-
-
-stemmer = PorterStemmer()
-#print(stop_words)
-
 #tokenising the texts using nltk's word_tokenize
 def tokenize(text):
     tokens = word_tokenize(text.lower())
     return tokens
 
 #stemming each tokens in the list of tokens sent
-def stem_tokens(tokens):
+def stem_tokens(tokens, stemmer = PorterStemmer()):
     return [stemmer.stem(token) for token in tokens]
 
 #??? TODO add comments
 def remove_extras(tokens):
+    # TODO: figure out origin of these tokens (probably in other processing docs?) - not returned by NLTK - no internet reference
     return [token for token in tokens if token not in ['no_queri','no_narr']]
 
 #preprocessing the text by turning it into "good" tokens
-def preprocess_text(text):
+def preprocess_text(text, stem_text = True, stemmer = PorterStemmer()):
     tokens = tokenize(text)
-    tokens = stem_tokens(tokens)
+
+    # If stemming is enabled, stem the tokens with the chosen stemmer
+    if stem_text:
+        tokens = stem_tokens(tokens, stemmer)
     tokens = remove_extras(tokens)
     return tokens
 
 #preprocessing all of the documents now
-def preprocess_documents(documents):
+def preprocess_documents(documents, stem_text = True, stemmer = PorterStemmer()):
     previous_id = 'x'
     count = 1
 
@@ -67,17 +67,17 @@ def preprocess_documents(documents):
         if file_id != previous_id:
             previous_id = file_id
             count += 1
-        doc['TEXT'] = preprocess_text(doc['TEXT'])
-        doc['HEAD'] = preprocess_text(doc['HEAD'])
+        doc['TEXT'] = preprocess_text(doc['TEXT'], stem_text, stemmer)
+        doc['HEAD'] = preprocess_text(doc['HEAD'], stem_text, stemmer)
 
     return documents
 
 #preprocessing queries
-def preprocess_queries(queries):
+def preprocess_queries(queries, stem_text = True, stemmer = PorterStemmer()):
     for query in queries:
-        query['title'] = preprocess_text(query['title'])
-        query['query'] = preprocess_text(query['query'])
-        query['narrative'] = preprocess_text(query['narrative'])
+        query['title'] = preprocess_text(query['title'], stem_text, stemmer)
+        query['query'] = preprocess_text(query['query'], stem_text, stemmer)
+        query['narrative'] = preprocess_text(query['narrative'], stem_text, stemmer)
     return queries
 
 def save_preprocessed_data(data, file_path):
