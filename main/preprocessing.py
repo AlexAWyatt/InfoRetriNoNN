@@ -43,7 +43,7 @@ def stem_tokens(tokens, stemmer = PorterStemmer()):
 
 #??? TODO add comments
 def remove_extras(tokens):
-    # TODO: figure out origin of these tokens (probably in other processing docs?) - not returned by NLTK - no internet reference
+    # TODO: It seems like 'no_queri' and 'no_narr' are related to parser but these are not precisely whats listed there and there is an 'i' in query here for some reason.
     return [token for token in tokens if token not in ['no_queri','no_narr']]
 
 #preprocessing the text by turning it into "good" tokens
