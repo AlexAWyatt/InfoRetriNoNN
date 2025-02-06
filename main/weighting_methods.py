@@ -23,6 +23,21 @@ class tf_idf:
 
         # natural logarithn here - change if needed
         return math.log(num_corp/tot_contain)
+    
+    # calculate tf-idf got a given term in a given doc
+    def score_term_doc(self, term, doc_id):
+        return self.norm_tf(term, doc_id)*self.idf(term)
+    
+    # calculate tf-idf for given doc for all query terms
+    def score_doc(self, doc_id, query):
+        fin_score = 0
+
+        for token in query:
+            if token in self.inverted_index and doc_id in self.inverted_index[token]:
+                fin_score += self.score_term_doc(token, doc_id)
+        
+        return fin_score
+
 
 '''First version is going to be for a general application. Looking to improve to 
 "zone specific" bm25F after - https://web.stanford.edu/class/cs276/handouts/lecture12-bm25etc.pdf'''
@@ -41,19 +56,19 @@ class BM25(tf_idf):
         return (1-self.b)+(self.b*(self.dl/self.avdl))
     
     # calculate bm25 for a given term in a given doc
-    def bm25_term_doc(self, term, doc_id):
+    def score_term_doc(self, term, doc_id):
 
         tf_prime = self.inverted_index[term][doc_id]/self.__B()
         idf = self.idf(term)
         return idf * (((self.k1 + 1)*tf_prime)/(self.k1 + tf_prime))
     
     # calculate bm25 for a given doc for all query terms
-    def bm25_doc(self, doc_id, query):
+    def score_doc(self, doc_id, query):
         fin_score = 0
 
         for token in query:
             if token in self.inverted_index and doc_id in self.inverted_index[token]:
-                fin_score += self.bm25_term_doc(token, doc_id)
+                fin_score += self.score_term_doc(token, doc_id)
         
         return fin_score
 
