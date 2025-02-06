@@ -6,6 +6,7 @@ import os
 from os.path import dirname
 from parser import *
 from preprocessing import *
+from indexing import *
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, LancasterStemmer
