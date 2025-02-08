@@ -5,7 +5,7 @@ from utils import *
 from similarity_measures import *
 
 class SearchEngine:
-    def __init__(self, model = tf_idf()):
+    def __init__(self, model):
         self.method = model
         self.results = {} #dictionaries to store vectors for cosine similarity
         self.query_counts = {}
@@ -31,7 +31,7 @@ class SearchEngine:
         return doc_scores
 
     # Queries are tokenized in main and saved
-    def rank_documents(self,query_tokenized, query_num, similarity_measure = CosineSimilarity()):
+    def rank_documents(self,query_tokenized, query_num, similarity_measure = "cos_sim"):
 
         #get the candiate documents that contain at least 1 query token
         doc_scores = self.retrieve_relevant_docs(query_tokenized)
@@ -41,14 +41,16 @@ class SearchEngine:
         query_vector = self.method.score_query(query_tokenized, query_token_counts)
 
         for doc_id in doc_scores:
-            similarities[doc_id] = similarity_measure.calc_similarity(query_vector, doc_scores[doc_id])
+            store = doc_scores[doc_id]
+            if similarity_measure == "cos_sim":
+                similarities[doc_id] = calc_cos_similarity(query_vector, doc_scores[doc_id])
 
         #sort the documents in descending order
         ranked_docs = sorted(similarities.items(), key=lambda x:x[1], reverse=True)
         return ranked_docs
 
     # all results are stored in an object tied to the specific instance of the SearchEngine class
-    def search(self, queries, run_name="my_run", similarity_measure = CosineSimilarity(), num_top_docs = 100):
+    def search(self, queries, run_name="my_run", similarity_measure = "cos_sim", num_top_docs = 100):
 
         for query_num, query_tokens in queries.items():
 

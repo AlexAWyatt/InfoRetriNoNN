@@ -7,6 +7,9 @@ from os.path import dirname
 from parser import *
 from preprocessing import *
 from indexing import *
+from search import *
+from weighting_methods import *
+from utils import *
 import nltk
 from nltk.corpus import stopwords
 from nltk.stem import PorterStemmer, LancasterStemmer
@@ -69,6 +72,15 @@ def main():
         print("Preprocessing queries...")
         queries = preprocess_queries(parse_queries_from_file(query_file_path), removestopwords=True, stopwords=stop_words, stem_text=True, stemmer = func_stemmer)
         save_preprocessed_data(queries, preprocessed_queries_path)
+
+    # testing - build inverted index
+    inverted_index = invert_index(documents)
+
+    weight_method = BM25(inverted_index, doc_lengths=collect_doc_lengths(documents))
+    search_e = SearchEngine(weight_method)
+    search_e.search(pair_usable_query(queries))
+
+    print(search_e.results['9'])
 
 if __name__ == "__main__":
     main()

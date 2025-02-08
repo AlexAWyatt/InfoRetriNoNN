@@ -8,16 +8,14 @@ class base_weight:
         self.tot_docs = len(doc_lengths)
     
     def idf(self, term):
-        num_corp = self.tot_docs
-        tot_contain = len(self.inverted_index[term])
-
-        # Otherwise we would divide by zero - this is in lieue of using a corrections term
-        # to prevent against dividing by 0 (only for safety)
-        if tot_contain == 0:
-            return 0
+        num_corp = self.tot_docs 
+        try:
+            tot_contain = len(self.inverted_index[term])
+        except:
+            tot_contain = 0
 
         # natural logarithn here - change if needed
-        return math.log(num_corp/tot_contain)
+        return math.log(((num_corp - tot_contain + 0.5)/(tot_contain + 0.5)) + 1)
                         
 
 class tf_idf(base_weight):
@@ -65,7 +63,7 @@ class tf_idf(base_weight):
 "zone specific" bm25F after - https://web.stanford.edu/class/cs276/handouts/lecture12-bm25etc.pdf'''
 # inherit tf_idf as parent so we have idf method (ease of maintenance)
 class BM25(base_weight):
-    def __init__(self, inverted_index, doc_lengths, k1, b):
+    def __init__(self, inverted_index, doc_lengths, k1 = 1.2, b = 0.75):
         self.inverted_index = inverted_index
         self.doc_lengths = doc_lengths
         self.tot_docs = len(doc_lengths)

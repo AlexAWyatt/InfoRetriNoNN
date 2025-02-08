@@ -14,3 +14,13 @@ def get_token_counts(query_tokens):
         token_counts[token] += 1
     
     return token_counts
+
+# pair query numbers and query text into a dict for use in search function
+def pair_usable_query(queries):
+
+    usable_queries = {}
+
+    for query in queries:
+        usable_queries[query['num']] = query['query']
+    
+    return usable_queries
