@@ -81,6 +81,21 @@ def main():
     search_e.search(pair_usable_query(queries))
 
     print(search_e.results['9'])
+    "save_output(search_e.results,path)" #replace path for the path you want the output results in
+    "save_inv_index(inverted_index,path)" #replace path for the path you want the inverted index in
+    #once you have replaced the paths you can put the functions in the code
+
+#save the output
+def save_output(main_output,path): #inverted index we want to save, path to the file location
+    with open(path, 'w', encoding='utf-8') as file: #open a file at the path location
+        json.dump(main_output, file, indent=4) #put the output in the file
+
+#load a previous output that has been saved
+def load_output(path): #file path
+    with open(path, 'r', encoding='utf-8') as file: #open the file at the path location
+        prev_output=json.load(file) #previous output is the content of the file
+    return prev_output
+
 
 if __name__ == "__main__":
     main()
