@@ -5,10 +5,11 @@ from utils import *
 from similarity_measures import *
 
 class SearchEngine:
-    def __init__(self, model):
+    def __init__(self, model, similarity_measure = "cos_sim"):
         self.method = model
         self.results = {} #dictionaries to store vectors for cosine similarity
         self.query_counts = {}
+        self.similarity_measure = similarity_measure
 
     def retrieve_relevant_docs(self, query_tokens):
         doc_scores = defaultdict(float) #assigning each score to the document.
@@ -31,7 +32,7 @@ class SearchEngine:
         return doc_scores
 
     # Queries are tokenized in main and saved
-    def rank_documents(self,query_tokenized, query_num, similarity_measure = "cos_sim"):
+    def rank_documents(self,query_tokenized, query_num):
 
         #get the candiate documents that contain at least 1 query token
         doc_scores = self.retrieve_relevant_docs(query_tokenized)
@@ -42,7 +43,7 @@ class SearchEngine:
 
         for doc_id in doc_scores:
             store = doc_scores[doc_id]
-            if similarity_measure == "cos_sim":
+            if self.similarity_measure == "cos_sim":
                 similarities[doc_id] = calc_cos_similarity(query_vector, doc_scores[doc_id])
 
         #sort the documents in descending order
@@ -50,13 +51,13 @@ class SearchEngine:
         return ranked_docs
 
     # all results are stored in an object tied to the specific instance of the SearchEngine class
-    def search(self, queries, run_name="my_run", similarity_measure = "cos_sim", num_top_docs = 100):
+    def search(self, queries, run_name="my_run", num_top_docs = 100):
 
         for query_num, query_tokens in queries.items():
 
             self.query_counts[query_num] = get_token_counts(query_tokens)
             #rank the documents based on the selected method for the given query
-            ranked_docs = self.rank_documents(query_tokens, query_num, similarity_measure)
+            ranked_docs = self.rank_documents(query_tokens, query_num)
             self.results[query_num] = {doc_id: score for doc_id, score in ranked_docs[:num_top_docs]}
 
         """ for rank, (doc_id, score) in enumerate(ranked_docs[:num_top_docs]):  #llimit to top 'num_top_docs' results

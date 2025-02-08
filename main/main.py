@@ -77,7 +77,7 @@ def main():
     inverted_index = invert_index(documents)
 
     weight_method = BM25(inverted_index, doc_lengths=collect_doc_lengths(documents))
-    search_e = SearchEngine(weight_method)
+    search_e = SearchEngine(weight_method, similarity_measure="cos_sim")
     search_e.search(pair_usable_query(queries))
 
     print(search_e.results['9'])
