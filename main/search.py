@@ -43,9 +43,6 @@ class SearchEngine:
         for doc_id in doc_scores:
             similarities[doc_id] = similarity_measure.calc_similarity(query_vector, doc_scores[doc_id])
 
-        # At this point we have a list of document ids each with their score in terms of our chosen method relative to the given query. Now we need to sort these scores I think
-        # but first check back up on use of cosine similarity
-
         #sort the documents in descending order
         ranked_docs = sorted(similarities.items(), key=lambda x:x[1], reverse=True)
         return ranked_docs
