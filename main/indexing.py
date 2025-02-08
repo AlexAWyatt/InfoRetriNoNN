@@ -34,7 +34,7 @@ def load_inv_index(path): #file path
         inv_index=json.load(file) #inverted index is the content of the file
     return inv_index
 
-#measure the length of the documents
+""" #measure the length of the documents
 def calc_docs_length(docs): #documents we want to measure
     #initialize the list of lengths
     doc_lengths={}
@@ -45,4 +45,4 @@ def calc_docs_length(docs): #documents we want to measure
         doc_length=len(doc_tokens)
         doc_lengths[doc_id]=doc_length
     #return the lengths
-    return doc_lengths
+    return doc_lengths """

@@ -88,9 +88,8 @@ def preprocess_documents(documents, removestopwords = True, stopwords = stop_wor
 #preprocessing queries
 def preprocess_queries(queries, removestopwords = True, stopwords = stop_words, stem_text = True, stemmer = PorterStemmer()):
     for query in queries:
-        query['title'] = preprocess_text(query['title'], removestopwords, stopwords, stem_text, stemmer)
+        # The only thing that needs processing for queries - there is no other usable text
         query['query'] = preprocess_text(query['query'], removestopwords, stopwords, stem_text, stemmer)
-        query['narrative'] = preprocess_text(query['narrative'], removestopwords, stopwords, stem_text, stemmer)
     return queries
 
 def save_preprocessed_data(data, file_path):

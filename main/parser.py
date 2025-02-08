@@ -42,10 +42,8 @@ def parse_query(query_line):
     query = json.loads(query_line)
     parsed_query = {
         'num': query['_id'],
-        'title': query.get('text','NO_TITLE'),
-        'query': query.get('metadata',{}).get('query','NO_QUERY'),
-        'narrative': query.get('metadata',{}).get('narrative','NO_NARRATIVE'),
-        'url': query.get('metadata',{}).get('url','NO_URL')
+        'query': query.get('text','NO_TEXT'),
+        'evidence': query.get('metadata',{})
     }
     return parsed_query
 

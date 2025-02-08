@@ -1,16 +1,11 @@
 import math
 import os
 
-class tf_idf:
+class base_weight:
     def __init__(self, inverted_index, doc_lengths):
         self.inverted_index = inverted_index
         self.doc_lengths = doc_lengths
         self.tot_docs = len(doc_lengths)
-        
-    # Normalized Term Frequency
-    def norm_tf(self, term, doc_id):
-        freq_doc = self.inverted_index[term][doc_id]
-        return freq_doc/self.doc_lengths['doc_id']
     
     def idf(self, term):
         num_corp = self.tot_docs
@@ -23,6 +18,33 @@ class tf_idf:
 
         # natural logarithn here - change if needed
         return math.log(num_corp/tot_contain)
+                        
+
+class tf_idf(base_weight):
+    def __init__(self, inverted_index, doc_lengths):
+        self.inverted_index = inverted_index
+        self.doc_lengths = doc_lengths
+        self.tot_docs = len(doc_lengths)
+    
+    # Normalized Term Frequency
+    def norm_tf(self, term, doc_id):
+        freq_doc = self.inverted_index[term][doc_id]
+        
+        # we are normalizing based on total length of the document - therefore this is the percentage of the documents terms that are the given term
+        return freq_doc/self.doc_lengths['doc_id']
+    
+    # TODO: Test that this is working and actually something we want to do
+    # we are calculating the score of the query itself so we can build a vector that we can then use to calculate cosine similarity against the vectors for the document
+    # 'query_full' is the list of tokens for the query
+    def score_query(self, query_full, query_counts):
+        query_vector = {}
+        query_length = len(query_full)
+        for token in query_full:
+            tf = query_counts[token]/query_length
+            idf = self.idf(token)
+            query_vector[token] = tf*idf
+        
+        return query_vector
     
     # calculate tf-idf got a given term in a given doc
     def score_term_doc(self, term, doc_id):
@@ -42,7 +64,7 @@ class tf_idf:
 '''First version is going to be for a general application. Looking to improve to 
 "zone specific" bm25F after - https://web.stanford.edu/class/cs276/handouts/lecture12-bm25etc.pdf'''
 # inherit tf_idf as parent so we have idf method (ease of maintenance)
-class BM25(tf_idf):
+class BM25(base_weight):
     def __init__(self, inverted_index, doc_lengths, k1, b):
         self.inverted_index = inverted_index
         self.doc_lengths = doc_lengths
@@ -54,6 +76,16 @@ class BM25(tf_idf):
 
     def __B(self):
         return (1-self.b)+(self.b*(self.dl/self.avdl))
+
+    def score_query(self, query_full, query_counts):
+        query_vector = {}
+
+        for token in query_full:
+            tf_prime = query_counts[token]/self.__B()
+            idf = self.idf(token)
+            query_vector[token] = idf * (((self.k1 + 1)*tf_prime)/(self.k1 + tf_prime))
+        
+        return query_vector
     
     # calculate bm25 for a given term in a given doc
     def score_term_doc(self, term, doc_id):

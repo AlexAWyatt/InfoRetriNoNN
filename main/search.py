@@ -1,12 +1,14 @@
 import numpy as np
 from collections import defaultdict # defaultdict is an object that automatically assigns a value to key that has not been set before so that we dont get a key error
+from weighting_methods import *
+from utils import *
+from similarity_measures import *
 
 class SearchEngine:
-    def __init__(self, index, tfidf_model = None, bm25_model= None):
-        self.index = index
-        self.tfidf_model = tfidf_model
-        self.bm25_model = bm25_model
-        self.doc_vectors = {} #dictionaries to store vectors for cosine similarity
+    def __init__(self, model = tf_idf()):
+        self.method = model
+        self.results = {} #dictionaries to store vectors for cosine similarity
+        self.query_counts = {}
 
     def retrieve_relevant_docs(self, query_tokens):
         doc_scores = defaultdict(float) #assigning each score to the document.
@@ -14,69 +16,53 @@ class SearchEngine:
         #loop through each token in the query
         for token in query_tokens:
 
-            #check if token exists in the inverted index
-            if token not in self.index:
+            if token in self.method.inverted_index:
+                items = self.method.inverted_index[token].items()
 
                 #go through each doc containing this token
-                for doc_id,weight in self.index[token].items():
-                    #add the token's weight to the docs total score
-                    doc_scores[doc_id]+= weight
+                for doc_id, _ in items:
+
+                    #add the token's weight to the docs total score (we only do one token at a time)
+                    doc_scores[doc_id] = {}
+
+                    # Independently find and save score of every token to allow later calculation of cosine similarity
+                    doc_scores[doc_id][token]= self.method.score_term_doc(token, doc_id)
 
         return doc_scores
 
-    # calculate the cosine similarity?? unsure---its a scramble of code online here and there
-    def calc_cosine_similarity(self, query_tokens, doc_id):
-        #initialising the query and doc vectors, the length of both vectors is the number of query tokens?
-        query_vector = np.zeros(len(query_tokens))
-        doc_vector = np.zeros(len(query_tokens))
-
-        #populate
-        for i,token in enumerate(query_tokens):
-            #if the token is in the index and appears in the document, store its weight in the document vector
-            if token in self.index and doc_id in self.index[token]:
-                doc_vector[i]= self.index[token][doc_id]
-
-            #assign a weight of 1 to the query vector for each query term
-            query_vector[i] = 1
-
-        numerator = np.dot(query_vector, doc_vector)
-
-        #euclidean
-        denominator = np.linalg.norm(query_vector) * np.linalg.norm(doc_vector)
-
-
-        return numerator/denominator if denominator != 0 else 0.0
-
-    def rank_documents(self,query, method=None):
-
-        #process the query into tokens
-        query_tokens = self.preprocess_query(query)
+    # Queries are tokenized in main and saved
+    def rank_documents(self,query_tokenized, query_num, similarity_measure = CosineSimilarity()):
 
         #get the candiate documents that contain at least 1 query token
-        doc_candidates = self.retrieve_relevant_docs(query_tokens)
+        doc_scores = self.retrieve_relevant_docs(query_tokenized)
+        similarities = {}
+        query_token_counts = self.query_counts[query_num]
 
-        scores = {}
+        query_vector = self.method.score_query(query_tokenized, query_token_counts)
 
-        for doc_id in doc_candidates:
-            if method =="tfidf" and self.tfidf_model:
-                scores[doc_id] = self.tfidf_model.score_doc(doc_id, query_tokens)
-            elif method =="bm25" and self.bm25_model:
-                scores[doc_id] = self.bm25_model.score_doc(doc_id, query_tokens)
-            else:
-                scores[doc_id] = self.calc_cosine_similarity(query_tokens, doc_id)
+        for doc_id in doc_scores:
+            similarities[doc_id] = similarity_measure.calc_similarity(query_vector, doc_scores[doc_id])
+
+        # At this point we have a list of document ids each with their score in terms of our chosen method relative to the given query. Now we need to sort these scores I think
+        # but first check back up on use of cosine similarity
+
         #sort the documents in descending order
-        ranked_docs = sorted(scores.items(), key=lambda x:x[1], reverse=True)
+        ranked_docs = sorted(similarities.items(), key=lambda x:x[1], reverse=True)
         return ranked_docs
 
-    def search(self, query, method=None, query_id=1, run_name="my_run"):
-        #rank the documents based on the selected method
-        ranked_docs = self.rank_documents(query, method)
-        result_table = {}
-        result_lines = []
+    # all results are stored in an object tied to the specific instance of the SearchEngine class
+    def search(self, queries, run_name="my_run", similarity_measure = CosineSimilarity(), num_top_docs = 100):
 
-        for rank, (doc_id, score) in enumerate(ranked_docs[:100]):  #llimit to top 100 results
+        for query_num, query_tokens in queries.items():
+
+            self.query_counts[query_num] = get_token_counts(query_tokens)
+            #rank the documents based on the selected method for the given query
+            ranked_docs = self.rank_documents(query_tokens, query_num, similarity_measure)
+            self.results[query_num] = {doc_id: score for doc_id, score in ranked_docs[:num_top_docs]}
+
+        """ for rank, (doc_id, score) in enumerate(ranked_docs[:num_top_docs]):  #llimit to top 'num_top_docs' results
             result_line = f"{query_id} Q0 {doc_id} {rank + 1} {score:.4f} {run_name}"  #formatting
             result_lines.append(result_line)
             result_table[doc_id] = score
 
-        return result_lines, result_table
+        return result_lines, result_table """
