@@ -103,7 +103,7 @@ def main():
     # loop through all preprocessed documents and create an inverted index for each
     for doc in parsed_docs:
         # build inverted index
-        inverted_indices.append(invert_index_title(doc))
+        inverted_indices.append(invert_index(doc))
     print("Done Inverted Indices")
 
     outputs = []
