@@ -22,12 +22,17 @@ class SearchEngine:
 
                 #go through each doc containing this token
                 for doc_id, _ in items:
+                    
+                    if doc_id not in doc_scores:
+                        #add the token's weight to the docs total score (we only do one token at a time)
+                        doc_scores[doc_id] = {}
 
-                    #add the token's weight to the docs total score (we only do one token at a time)
-                    doc_scores[doc_id] = {}
+                    # if token not yet tested - create entry for storage
+                    if token not in doc_scores[doc_id]:
+                        doc_scores[doc_id][token] = 0
 
                     # Independently find and save score of every token to allow later calculation of cosine similarity
-                    doc_scores[doc_id][token]= self.method.score_term_doc(token, doc_id)
+                    doc_scores[doc_id][token] += self.method.score_term_doc(token, doc_id)
 
         return doc_scores
 

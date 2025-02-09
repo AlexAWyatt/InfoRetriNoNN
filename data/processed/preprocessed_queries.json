@@ -13,6 +13,7 @@
     {
         "num": "2",
         "query": [
+            "million",
             "uk",
             "abnorm",
             "prp",
@@ -54,6 +55,7 @@
             "happen",
             "newborn",
             "age",
+            "less",
             "month"
         ],
         "evidence": {}
@@ -127,6 +129,7 @@
             "mgday",
             "dosag",
             "vitamin",
+            "b",
             "doe",
             "affect",
             "chronic",
@@ -180,6 +183,8 @@
         "query": [
             "perinat",
             "mortal",
+            "due",
+            "low",
             "birth",
             "weight"
         ],
@@ -209,6 +214,9 @@
             "approxim",
             "learn",
             "capac",
+            "seen",
+            "day",
+            "old",
             "adult"
         ],
         "evidence": {}
@@ -224,6 +232,9 @@
             "approxim",
             "learn",
             "capac",
+            "seen",
+            "day",
+            "old",
             "adult"
         ],
         "evidence": {}
@@ -254,6 +265,7 @@
             "disord",
             "receiv",
             "treatment",
+            "low",
             "middl",
             "incom",
             "countri"
@@ -296,6 +308,7 @@
             "happen",
             "newborn",
             "age",
+            "less",
             "month"
         ],
         "evidence": {}
@@ -303,6 +316,7 @@
     {
         "num": "26",
         "query": [
+            "g",
             "dose",
             "chloroquin",
             "chemoprophylact",
@@ -310,6 +324,7 @@
             "result",
             "retin",
             "toxic",
+            "year",
             "weekli",
             "intak"
         ],
@@ -318,6 +333,7 @@
     {
         "num": "27",
         "query": [
+            "g",
             "dose",
             "chloroquin",
             "chemoprophylact",
@@ -325,6 +341,7 @@
             "result",
             "retin",
             "toxic",
+            "year",
             "weekli",
             "intak"
         ],
@@ -462,6 +479,7 @@
         "query": [
             "defici",
             "vitamin",
+            "b",
             "decreas",
             "blood",
             "level",
@@ -474,6 +492,7 @@
         "query": [
             "defici",
             "vitamin",
+            "b",
             "decreas",
             "blood",
             "level",
@@ -540,6 +559,7 @@
             "strong",
             "indic",
             "infertil",
+            "even",
             "priori",
             "noninfertil",
             "popul"
@@ -582,6 +602,7 @@
     {
         "num": "41",
         "query": [
+            "high",
             "microerythrocyt",
             "count",
             "protect",
@@ -614,6 +635,7 @@
     {
         "num": "43",
         "query": [
+            "low",
             "percentag",
             "hematopoiet",
             "progenitor",
@@ -636,7 +658,8 @@
             "risk",
             "develop",
             "diabet",
-            "age"
+            "age",
+            "year"
         ],
         "evidence": {
             "56893404": [
@@ -658,7 +681,8 @@
             "increas",
             "risk",
             "diabet",
-            "age"
+            "age",
+            "year"
         ],
         "evidence": {}
     },
@@ -910,6 +934,7 @@
         "num": "66",
         "query": [
             "azt",
+            "given",
             "ribavirin",
             "increas",
             "anemia"
@@ -973,6 +998,7 @@
             "activ",
             "ppmd",
             "enhanc",
+            "p",
             "function"
         ],
         "evidence": {
@@ -1037,12 +1063,14 @@
         "num": "74",
         "query": [
             "activ",
+            "h",
             "pylori",
             "ureas",
             "ha",
             "polymer",
             "structur",
             "consist",
+            "five",
             "distinct",
             "subunit"
         ],
@@ -1311,6 +1339,7 @@
         "query": [
             "age",
             "patient",
+            "less",
             "suscept",
             "ischaemiareperfus",
             "injuri"
@@ -1359,6 +1388,7 @@
         "num": "95",
         "query": [
             "albendazol",
+            "use",
             "treat",
             "soiltransmit",
             "helminth"
@@ -1371,6 +1401,7 @@
             "algerian",
             "physician",
             "constitu",
+            "largest",
             "compon",
             "subsaharan",
             "africatrain",
@@ -1811,7 +1842,9 @@
         "query": [
             "antimicrobi",
             "agent",
+            "less",
             "effect",
+            "due",
             "pressur",
             "antimicrobi",
             "usag"
@@ -1833,6 +1866,7 @@
             "antimicrobi",
             "agent",
             "effect",
+            "due",
             "pressur",
             "antimicrobi",
             "usag"
@@ -1856,6 +1890,7 @@
             "increas",
             "rate",
             "tuberculosi",
+            "across",
             "broad",
             "rang",
             "cd",
@@ -1937,6 +1972,7 @@
     {
         "num": "139",
         "query": [
+            "least",
             "patient",
             "expos",
             "radiat",
@@ -1955,6 +1991,7 @@
             "stem",
             "cell",
             "ha",
+            "better",
             "graft",
             "function",
             "induct",
@@ -2023,7 +2060,10 @@
     {
         "num": "152",
         "query": [
+            "b",
             "cell",
+            "go",
+            "though",
             "plasmablast",
             "differenti",
             "antibodi",
@@ -2212,6 +2252,8 @@
         "num": "161",
         "query": [
             "bacteriophaga",
+            "ms",
+            "q",
             "member",
             "levivirida"
         ],
@@ -2444,11 +2486,13 @@
         "num": "177",
         "query": [
             "bind",
+            "p",
             "enhanc",
             "region",
             "pber",
             "regul",
             "activ",
+            "p",
             "transcript",
             "cell",
             "cycl",
@@ -2570,6 +2614,7 @@
             "marrow",
             "bm",
             "transplant",
+            "use",
             "treat",
             "acut",
             "myeloid",
@@ -2653,6 +2698,7 @@
     {
         "num": "196",
         "query": [
+            "c",
             "work",
             "synergist",
             "activ",
@@ -2694,6 +2740,7 @@
             "ccl",
             "predominantli",
             "present",
+            "within",
             "dln"
         ],
         "evidence": {}
@@ -2807,10 +2854,12 @@
         "num": "204",
         "query": [
             "cdk",
+            "show",
             "impair",
             "bind",
             "lossoffunct",
             "variant",
+            "p",
             "inkc"
         ],
         "evidence": {}
@@ -2819,10 +2868,12 @@
         "num": "205",
         "query": [
             "cdk",
+            "show",
             "improv",
             "bind",
             "lossoffunct",
             "variant",
+            "p",
             "inkc"
         ],
         "evidence": {}
@@ -2890,6 +2941,7 @@
             "correl",
             "postop",
             "mortal",
+            "follow",
             "coronari",
             "arteri",
             "bypass",
@@ -3066,6 +3118,7 @@
             "receptor",
             "target",
             "therapi",
+            "later",
             "becom",
             "refractori",
             "sever",
@@ -3176,6 +3229,7 @@
             "clock",
             "associ",
             "mitosi",
+            "time",
             "nih",
             "cell"
         ],
@@ -3197,6 +3251,7 @@
             "clock",
             "predict",
             "mitosi",
+            "time",
             "nih",
             "cell"
         ],
@@ -3222,6 +3277,7 @@
             "accompani",
             "chang",
             "replic",
+            "time",
             "transcript",
             "nuclear",
             "local"
@@ -3240,6 +3296,7 @@
     {
         "num": "244",
         "query": [
+            "certain",
             "immunomodulatorhuman",
             "dialyz",
             "leukocyt",
@@ -3281,6 +3338,7 @@
         "num": "246",
         "query": [
             "charcoal",
+            "show",
             "benefit",
             "acut",
             "paraquat",
@@ -3363,9 +3421,11 @@
             "homozygos",
             "mthfr",
             "gene",
+            "less",
             "vulner",
             "stroke",
             "caus",
+            "low",
             "level",
             "folat",
             "intak"
@@ -3384,6 +3444,7 @@
             "vulner",
             "stroke",
             "caus",
+            "low",
             "level",
             "folat",
             "intak"
@@ -3397,6 +3458,7 @@
             "trachomati",
             "preval",
             "uk",
+            "among",
             "individu"
         ],
         "evidence": {}
@@ -3408,6 +3470,7 @@
             "trachomati",
             "preval",
             "uk",
+            "among",
             "sexuallyexperienc",
             "individu",
             "age"
@@ -3455,10 +3518,12 @@
             "chronic",
             "hiv",
             "stimul",
+            "b",
             "cell",
             "lead",
             "prematur",
             "exhaust",
+            "b",
             "cell"
         ],
         "evidence": {}
@@ -3534,6 +3599,7 @@
             "perpetu",
             "inflammatori",
             "cycl",
+            "via",
             "induct",
             "autoantibodi"
         ],
@@ -3592,7 +3658,8 @@
             "recruit",
             "vari",
             "cell",
-            "cycl"
+            "cycl",
+            "time"
         ],
         "evidence": {
             "22405338": [
@@ -3660,6 +3727,7 @@
             "vareniclin",
             "bupropion",
             "effect",
+            "week",
             "reatment",
             "compar",
             "vareniclin",
@@ -3685,6 +3753,7 @@
             "viru",
             "comymv",
             "ha",
+            "three",
             "typic",
             "badnaviru",
             "orf",
@@ -3735,6 +3804,7 @@
             "transcriptom",
             "analysi",
             "identifi",
+            "new",
             "platelet",
             "protein",
             "structur",
@@ -3771,6 +3841,7 @@
             "factor",
             "ipsclin",
             "distinct",
+            "found",
             "cell"
         ],
         "evidence": {}
@@ -3779,6 +3850,7 @@
         "num": "283",
         "query": [
             "consumpt",
+            "whole",
             "fruit",
             "increas",
             "risk",
@@ -3802,9 +3874,11 @@
             "continu",
             "hhv",
             "transmiss",
+            "among",
             "msm",
             "san",
             "francisco",
+            "may",
             "explain",
             "urogenit",
             "contact"
@@ -3943,6 +4017,8 @@
             "crossov",
             "hot",
             "spot",
+            "found",
+            "within",
             "gene",
             "promot",
             "saccharomyc",
@@ -3990,6 +4066,7 @@
         "num": "299",
         "query": [
             "cytochrom",
+            "c",
             "transfer",
             "cytosol",
             "mitochondri",
@@ -4030,6 +4107,7 @@
             "protein",
             "enabl",
             "pol",
+            "v",
             "transcript",
             "vivo"
         ],
@@ -4042,6 +4120,7 @@
             "protein",
             "enabl",
             "pol",
+            "v",
             "transcript",
             "vivo"
         ],
@@ -4122,6 +4201,7 @@
     {
         "num": "310",
         "query": [
+            "de",
             "novo",
             "assembl",
             "sequenc",
@@ -4139,6 +4219,7 @@
     {
         "num": "313",
         "query": [
+            "de",
             "novo",
             "assembl",
             "sequenc",
@@ -4156,6 +4237,7 @@
         "num": "315",
         "query": [
             "decreas",
+            "p",
             "prostat",
             "tumor",
             "stroma",
@@ -4490,6 +4572,7 @@
             "diabet",
             "remiss",
             "occur",
+            "less",
             "peopl",
             "treat",
             "convent",
@@ -4615,6 +4698,7 @@
             "myeloid",
             "cell",
             "skew",
+            "upon",
             "activ",
             "insulin",
             "signal"
@@ -4711,7 +4795,9 @@
         "query": [
             "distant",
             "cre",
+            "less",
             "conserv",
+            "among",
             "speci"
         ],
         "evidence": {}
@@ -4723,6 +4809,7 @@
             "supracellular",
             "actomyosin",
             "structur",
+            "found",
             "boundari",
             "wing",
             "imagin",
@@ -4792,6 +4879,7 @@
         "query": [
             "dure",
             "nonhomolog",
+            "end",
             "join",
             "ligat",
             "step",
@@ -4812,6 +4900,7 @@
         "query": [
             "dure",
             "nonhomolog",
+            "end",
             "join",
             "ligat",
             "step",
@@ -4836,8 +4925,10 @@
             "antibodi",
             "respons",
             "activ",
+            "b",
             "cell",
             "migrat",
+            "toward",
             "innerand",
             "outer",
             "follicular",
@@ -4853,6 +4944,7 @@
     {
         "num": "363",
         "query": [
+            "eg",
             "tumor",
             "kill",
             "system",
@@ -5016,6 +5108,7 @@
             "egr",
             "regul",
             "homeostasi",
+            "b",
             "cell"
         ],
         "evidence": {
@@ -5053,6 +5146,7 @@
             "egr",
             "regul",
             "homeostasi",
+            "b",
             "cell"
         ],
         "evidence": {
@@ -5150,6 +5244,7 @@
         "num": "376",
         "query": [
             "elimin",
+            "last",
             "sporad",
             "case",
             "malaria",
@@ -5320,6 +5415,7 @@
             "mimick",
             "diseas",
             "model",
+            "ad",
             "specif",
             "molecul",
             "cultur",
@@ -5353,6 +5449,7 @@
             "noncommunic",
             "diseas",
             "preval",
+            "high",
             "econom",
             "set"
         ],
@@ -5399,6 +5496,7 @@
         "query": [
             "ethanol",
             "stress",
+            "lower",
             "express",
             "psp",
             "bacteria"
@@ -5460,6 +5558,7 @@
             "cancer",
             "mortal",
             "rate",
+            "among",
             "chines",
             "citizen"
         ],
@@ -5494,6 +5593,7 @@
             "cancer",
             "mortal",
             "rate",
+            "among",
             "chines",
             "citizen"
         ],
@@ -5524,6 +5624,7 @@
         "num": "398",
         "query": [
             "exhaust",
+            "b",
             "cell",
             "contribut",
             "poor",
@@ -5585,7 +5686,9 @@
             "viru",
             "antigen",
             "peptid",
-            "relaps"
+            "make",
+            "relaps",
+            "like"
         ],
         "evidence": {}
     },
@@ -5607,6 +5710,7 @@
     {
         "num": "406",
         "query": [
+            "f",
             "macrophag",
             "regul",
             "matur",
@@ -5618,11 +5722,13 @@
     {
         "num": "407",
         "query": [
+            "fact",
             "histon",
             "chaperon",
             "compens",
             "histon",
             "hahiston",
+            "b",
             "hb",
             "dimer",
             "evict",
@@ -5639,6 +5745,7 @@
             "femal",
             "carrier",
             "apolipoprotein",
+            "e",
             "apo",
             "allel",
             "decreas",
@@ -5662,6 +5769,7 @@
             "femal",
             "carrier",
             "apolipoprotein",
+            "e",
             "apo",
             "allel",
             "increas",
@@ -5686,11 +5794,14 @@
             "femal",
             "carrier",
             "apolipoprotein",
+            "e",
             "apo",
             "allel",
+            "longer",
             "lifetim",
             "exposur",
             "estrogen",
+            "due",
             "increas",
             "reproduct",
             "period"
@@ -5712,12 +5823,14 @@
             "femal",
             "carrier",
             "apolipoprotein",
+            "e",
             "apo",
             "allel",
             "shorter",
             "lifetim",
             "exposur",
             "estrogen",
+            "due",
             "decreas",
             "reproduct",
             "period"
@@ -5777,6 +5890,7 @@
             "flexibl",
             "molecul",
             "experi",
+            "less",
             "steric",
             "hindranc",
             "tumor",
@@ -5791,6 +5905,7 @@
         "query": [
             "folat",
             "vitamin",
+            "b",
             "level",
             "influenc",
             "associ",
@@ -6448,6 +6563,7 @@
             "inhibitor",
             "rhogdi",
             "interact",
+            "p",
             "ntr",
             "death",
             "domain"
@@ -6489,6 +6605,7 @@
             "gastric",
             "cancer",
             "occur",
+            "due",
             "accumul",
             "mutat",
             "host",
@@ -6515,6 +6632,7 @@
     {
         "num": "484",
         "query": [
+            "h",
             "gp",
             "protein",
             "induc",
@@ -6529,12 +6647,14 @@
     {
         "num": "485",
         "query": [
+            "h",
             "gp",
             "protein",
             "induc",
             "degrad",
             "free",
             "histon",
+            "via",
             "raddepend",
             "mechan"
         ],
@@ -6543,6 +6663,7 @@
     {
         "num": "486",
         "query": [
+            "h",
             "gp",
             "protein",
             "inhibit",
@@ -6557,12 +6678,14 @@
     {
         "num": "487",
         "query": [
+            "h",
             "gp",
             "protein",
             "suppress",
             "degrad",
             "free",
             "histon",
+            "via",
             "raddepend",
             "mechan"
         ],
@@ -6618,9 +6741,12 @@
             "effect",
             "transport",
             "larg",
+            "small",
             "molecul",
+            "across",
             "cellular",
             "membran",
+            "larger",
             "popul",
             "neuron"
         ],
@@ -6670,10 +6796,12 @@
         "query": [
             "hsctt",
             "dosag",
+            "may",
             "diagnost",
             "onset",
             "symptom",
             "occur",
+            "less",
             "hour",
             "befor",
             "ami"
@@ -6911,9 +7039,11 @@
     {
         "num": "515",
         "query": [
+            "high",
             "level",
             "crp",
             "lead",
+            "higher",
             "risk",
             "exacerb",
             "chronic",
@@ -6942,6 +7072,7 @@
     {
         "num": "523",
         "query": [
+            "higher",
             "plasma",
             "level",
             "icarnitin",
@@ -6974,6 +7105,7 @@
     {
         "num": "524",
         "query": [
+            "higher",
             "plasma",
             "level",
             "icarnitin",
@@ -7030,9 +7162,11 @@
             "embryon",
             "stem",
             "cell",
+            "give",
             "rise",
             "cell",
             "type",
+            "three",
             "embryon",
             "germ",
             "layer"
@@ -7077,6 +7211,7 @@
             "embryon",
             "stem",
             "cell",
+            "give",
             "rise",
             "cell",
             "type",
@@ -7084,6 +7219,7 @@
             "embryon",
             "germ",
             "layer",
+            "two",
             "layer"
         ],
         "evidence": {
@@ -7127,10 +7263,12 @@
             "stem",
             "cell",
             "capac",
+            "give",
             "rise",
             "differenti",
             "progeni",
             "repres",
+            "three",
             "embryon",
             "germ",
             "layer"
@@ -7422,6 +7560,7 @@
             "improv",
             "oer",
             "catalyst",
+            "show",
             "stabl",
             "activ",
             "sever",
@@ -7493,6 +7632,7 @@
             "pathway",
             "caus",
             "sensit",
+            "high",
             "iron",
             "condit"
         ],
@@ -7530,6 +7670,7 @@
             "pathway",
             "reduc",
             "sensit",
+            "high",
             "iron",
             "condit"
         ],
@@ -7871,6 +8012,7 @@
             "adult",
             "current",
             "remot",
+            "use",
             "adhd",
             "medic",
             "increas",
@@ -7902,6 +8044,7 @@
         "query": [
             "incid",
             "dementia",
+            "higher",
             "incid",
             "dsmiv",
             "dementia"
@@ -7922,6 +8065,7 @@
         "query": [
             "incid",
             "dementia",
+            "lower",
             "incid",
             "dsmiv",
             "dementia"
@@ -7989,6 +8133,7 @@
         "query": [
             "includ",
             "pharmacist",
+            "round",
             "team",
             "doe",
             "alter",
@@ -8020,6 +8165,7 @@
         "query": [
             "includ",
             "pharmacist",
+            "round",
             "team",
             "reduc",
             "incid",
@@ -8049,6 +8195,7 @@
         "num": "602",
         "query": [
             "increas",
+            "p",
             "prostat",
             "tumor",
             "stroma",
@@ -8160,6 +8307,8 @@
             "increas",
             "lipolysi",
             "lead",
+            "higher",
+            "p",
             "phosphoryl",
             "adipos",
             "tissu"
@@ -8267,6 +8416,7 @@
             "doe",
             "lead",
             "mutat",
+            "higher",
             "tumorigenesi",
             "rate"
         ],
@@ -8280,6 +8430,7 @@
             "retrotransposon",
             "assosci",
             "mutat",
+            "higher",
             "tumorigenesi",
             "rate"
         ],
@@ -8309,6 +8460,7 @@
             "increas",
             "vessel",
             "densiti",
+            "along",
             "reduct",
             "fibrosi",
             "improv",
@@ -8324,6 +8476,7 @@
             "individu",
             "alzheim",
             "particip",
+            "six",
             "month",
             "physic",
             "activ",
@@ -8353,6 +8506,7 @@
         "num": "622",
         "query": [
             "individu",
+            "low",
             "serum",
             "vitamin",
             "concentr",
@@ -8626,6 +8780,7 @@
             "insulin",
             "effect",
             "appetit",
+            "via",
             "ventral",
             "tegment",
             "neuron"
@@ -8650,6 +8805,7 @@
             "acid",
             "fa",
             "vitamin",
+            "b",
             "vb",
             "increas",
             "level",
@@ -8674,6 +8830,7 @@
             "acid",
             "fa",
             "vitamin",
+            "b",
             "vb",
             "reduc",
             "level",
@@ -8767,6 +8924,7 @@
             "collabor",
             "learn",
             "offer",
+            "best",
             "class",
             "perform"
         ],
@@ -8987,6 +9145,7 @@
             "characterist",
             "cell",
             "type",
+            "within",
             "atherosclerot",
             "lesion"
         ],
@@ -9037,6 +9196,7 @@
             "modul",
             "channel",
             "activ",
+            "g",
             "proteincoupl",
             "melanocortin",
             "receptor",
@@ -9286,7 +9446,8 @@
             "promot",
             "associ",
             "rna",
-            "polymeras"
+            "polymeras",
+            "ii"
         ],
         "evidence": {}
     },
@@ -9417,6 +9578,8 @@
         "num": "686",
         "query": [
             "lamin",
+            "found",
+            "within",
             "inner",
             "layer",
             "mitochondri",
@@ -9429,6 +9592,8 @@
         "num": "687",
         "query": [
             "lamin",
+            "found",
+            "within",
             "inner",
             "layer",
             "nuclear",
@@ -9452,6 +9617,7 @@
     {
         "num": "689",
         "query": [
+            "less",
             "patient",
             "expos",
             "radiat",
@@ -9535,6 +9701,7 @@
     {
         "num": "704",
         "query": [
+            "long",
             "rang",
             "chromatin",
             "interact",
@@ -9546,6 +9713,7 @@
     {
         "num": "705",
         "query": [
+            "long",
             "chain",
             "polyunsatur",
             "fatti",
@@ -9555,22 +9723,26 @@
             "signific",
             "effect",
             "wheez",
-            "asthma"
+            "asthma",
+            "year"
         ],
         "evidence": {}
     },
     {
         "num": "709",
         "query": [
+            "long",
             "chain",
             "polyunsatur",
             "fatti",
             "acid",
             "supplement",
             "associ",
+            "lower",
             "rate",
             "atop",
-            "eczema"
+            "eczema",
+            "year"
         ],
         "evidence": {
             "22442133": [
@@ -9592,6 +9764,7 @@
     {
         "num": "710",
         "query": [
+            "long",
             "chain",
             "polyunsatur",
             "fatti",
@@ -9606,6 +9779,7 @@
     {
         "num": "713",
         "query": [
+            "low",
             "express",
             "mira",
             "doe",
@@ -9622,6 +9796,7 @@
     {
         "num": "714",
         "query": [
+            "low",
             "express",
             "mira",
             "doe",
@@ -9638,11 +9813,14 @@
     {
         "num": "717",
         "query": [
+            "low",
             "nucleosom",
             "occup",
             "correl",
+            "high",
             "methyl",
             "level",
+            "across",
             "speci"
         ],
         "evidence": {
@@ -9692,6 +9870,7 @@
             "lyc",
             "hi",
             "monocyt",
+            "higher",
             "inflammatori",
             "capac",
             "lyc",
@@ -9915,6 +10094,7 @@
             "mucc",
             "activ",
             "nfb",
+            "p",
             "signal",
             "pathway",
             "interact",
@@ -10106,6 +10286,7 @@
         "query": [
             "malaria",
             "ha",
+            "high",
             "vectori",
             "capac"
         ],
@@ -10119,6 +10300,7 @@
             "produc",
             "cancer",
             "cell",
+            "also",
             "contribut",
             "carcinogenesi"
         ],
@@ -10137,6 +10319,7 @@
             "chang",
             "associ",
             "alphahelic",
+            "across",
             "plasma",
             "membran"
         ],
@@ -10160,6 +10343,7 @@
             "mathemat",
             "model",
             "predict",
+            "use",
             "artemisininbas",
             "combin",
             "therapi",
@@ -10306,6 +10490,7 @@
             "men",
             "suscept",
             "death",
+            "due",
             "pneumonia",
             "compar",
             "women"
@@ -10332,7 +10517,9 @@
             "agent",
             "fluoropyrimidin",
             "result",
+            "similar",
             "efficaci",
+            "better",
             "qualiti",
             "life",
             "compar",
@@ -10556,6 +10743,7 @@
         "num": "782",
         "query": [
             "mice",
+            "without",
             "ifn",
             "receptor",
             "highli",
@@ -10585,6 +10773,7 @@
         "num": "787",
         "query": [
             "microcin",
+            "j",
             "encourag",
             "nucleosid",
             "triphosph",
@@ -10606,6 +10795,7 @@
         "num": "788",
         "query": [
             "microcin",
+            "j",
             "inhibit",
             "nucleosid",
             "triphosph",
@@ -10925,6 +11115,7 @@
             "mous",
             "model",
             "gener",
+            "use",
             "artifici",
             "spermatid"
         ],
@@ -11247,6 +11438,7 @@
             "trap",
             "net",
             "antigen",
+            "may",
             "contain",
             "target",
             "autoantigen",
@@ -11291,6 +11483,7 @@
             "nigerian",
             "physician",
             "constitu",
+            "largest",
             "compon",
             "subsaharan",
             "africatrain",
@@ -11333,6 +11526,8 @@
         "query": [
             "nonhypertens",
             "peopl",
+            "year",
+            "old",
             "chanc",
             "develop",
             "hypertens",
@@ -11439,6 +11634,7 @@
             "nonsteroid",
             "antinflammatori",
             "drug",
+            "show",
             "potenti",
             "anticanc",
             "indic"
@@ -11587,6 +11783,7 @@
             "fibroblast",
             "human",
             "oocyt",
+            "give",
             "rise",
             "blastocyst",
             "contain",
@@ -11603,10 +11800,12 @@
             "toler",
             "coeliac",
             "patient",
+            "may",
             "oat",
             "specif",
             "inflammatori",
             "cell",
+            "small",
             "bowel",
             "mucosa"
         ],
@@ -11662,6 +11861,7 @@
         "query": [
             "omnivor",
             "produc",
+            "less",
             "trimethylamin",
             "noxid",
             "dietari",
@@ -11726,6 +11926,8 @@
     {
         "num": "885",
         "query": [
+            "one",
+            "five",
             "surgic",
             "random",
             "control",
@@ -11753,6 +11955,8 @@
     {
         "num": "886",
         "query": [
+            "one",
+            "two",
             "surgic",
             "random",
             "control",
@@ -11863,6 +12067,7 @@
     {
         "num": "895",
         "query": [
+            "half",
             "gabones",
             "children",
             "schimmelpenningfeuersteinmim",
@@ -11933,6 +12138,7 @@
         "query": [
             "oxid",
             "phosphoryl",
+            "one",
             "primari",
             "glycometabol",
             "pathway",
@@ -12053,6 +12259,7 @@
             "impact",
             "express",
             "spinal",
+            "long",
             "term",
             "potenti",
             "pgkla",
@@ -12079,6 +12286,7 @@
             "role",
             "express",
             "spinal",
+            "long",
             "term",
             "potenti",
             "pgkla",
@@ -12231,8 +12439,10 @@
             "common",
             "epitheli",
             "cancer",
+            "like",
             "emerg",
             "event",
+            "first",
             "hospit",
             "admiss",
             "live",
@@ -12264,8 +12474,11 @@
             "common",
             "epitheli",
             "cancer",
+            "less",
+            "like",
             "emerg",
             "event",
+            "first",
             "hospit",
             "admiss",
             "live",
@@ -12295,6 +12508,7 @@
         "query": [
             "patient",
             "microcytosi",
+            "higher",
             "erythrocyt",
             "count",
             "vulner",
@@ -12333,6 +12547,7 @@
         "query": [
             "patient",
             "microcytosi",
+            "higher",
             "erythrocyt",
             "count",
             "resist",
@@ -12372,6 +12587,7 @@
             "patient",
             "panic",
             "anxieti",
+            "show",
             "decreas",
             "csf",
             "level",
@@ -12396,8 +12612,10 @@
             "patient",
             "vasoocclus",
             "crisi",
+            "show",
             "increas",
             "morphin",
+            "use",
             "breath",
             "ppm",
             "ino",
@@ -12465,6 +12683,7 @@
         "query": [
             "persistor",
             "cell",
+            "one",
             "reason",
             "incomplet",
             "respons",
@@ -12484,6 +12703,7 @@
             "pharmacist",
             "attend",
             "ward",
+            "round",
             "increas",
             "advers",
             "event",
@@ -12512,6 +12732,7 @@
             "pharmacist",
             "attend",
             "ward",
+            "round",
             "reduc",
             "advers",
             "event",
@@ -12539,6 +12760,7 @@
         "query": [
             "phase",
             "inform",
+            "use",
             "predict",
             "donorrecipi",
             "match",
@@ -12675,6 +12897,7 @@
         "num": "952",
         "query": [
             "pioglitazon",
+            "use",
             "associ",
             "increas",
             "risk",
@@ -12702,6 +12925,7 @@
         "num": "953",
         "query": [
             "pioglitazon",
+            "use",
             "significantli",
             "associ",
             "increas",
@@ -12736,6 +12960,7 @@
         "num": "954",
         "query": [
             "pioglitazon",
+            "use",
             "significantli",
             "associ",
             "increas",
@@ -12870,6 +13095,7 @@
             "associ",
             "spliceosom",
             "compon",
+            "less",
             "stabl",
             "unassoci",
             "splice",
@@ -12947,6 +13173,7 @@
         "query": [
             "primpol",
             "degrad",
+            "short",
             "dna",
             "replic",
             "intermedi",
@@ -12963,6 +13190,7 @@
         "query": [
             "primpol",
             "gener",
+            "short",
             "dna",
             "replic",
             "intermedi",
@@ -12984,6 +13212,7 @@
             "hpv",
             "detect",
             "ha",
+            "lower",
             "longitudin",
             "sensit",
             "convent",
@@ -13057,6 +13286,7 @@
             "hpv",
             "detect",
             "ha",
+            "higher",
             "longitudin",
             "sensit",
             "detect",
@@ -13134,6 +13364,7 @@
             "cytokin",
             "suppress",
             "secondari",
+            "pro",
             "antiinflammatori",
             "mediat"
         ],
@@ -13276,6 +13507,7 @@
             "npc",
             "popul",
             "onli",
+            "obtain",
             "cell",
             "cultur",
             "undergo",
@@ -13436,6 +13668,7 @@
         "query": [
             "pyridostatin",
             "stabil",
+            "g",
             "quadruplex",
             "telomer",
             "region"
@@ -13455,11 +13688,13 @@
         "num": "1001",
         "query": [
             "rd",
+            "stop",
             "mirna",
             "product",
             "increas",
             "select",
             "dcr",
+            "long",
             "dsrna"
         ],
         "evidence": {}
@@ -13836,6 +14071,8 @@
             "level",
             "lipolysi",
             "lead",
+            "higher",
+            "p",
             "phosphoryl",
             "adipos",
             "tissu"
@@ -13941,6 +14178,8 @@
             "mrna",
             "translat",
             "mice",
+            "without",
+            "lower",
             "overal",
             "protein",
             "synthesi"
@@ -14282,6 +14521,7 @@
             "protein",
             "rip",
             "interact",
+            "p",
             "ntr",
             "death",
             "domain"
@@ -14292,6 +14532,7 @@
         "num": "1048",
         "query": [
             "ribosomopathi",
+            "high",
             "degre",
             "cell",
             "tissu",
@@ -14356,6 +14597,7 @@
             "caus",
             "global",
             "warm",
+            "lower",
             "risk",
             "dengu",
             "fever",
@@ -14370,9 +14612,12 @@
             "cardiovascular",
             "event",
             "cut",
+            "third",
+            "use",
             "antihypertens",
             "drug",
             "therapi",
+            "among",
             "hemodialysi",
             "patient"
         ],
@@ -14393,6 +14638,7 @@
             "riskadjust",
             "mortal",
             "rate",
+            "similar",
             "teach",
             "nonteach",
             "hospit"
@@ -14487,6 +14733,7 @@
         "query": [
             "scpifp",
             "ha",
+            "higher",
             "bind",
             "abil",
             "grich",
@@ -14706,6 +14953,7 @@
             "effect",
             "associ",
             "antidepress",
+            "lower",
             "risk",
             "myocardi",
             "infarct"
@@ -14724,6 +14972,7 @@
             "sexual",
             "dysfunct",
             "result",
+            "use",
             "ssri",
             "antidepress"
         ],
@@ -14752,6 +15001,7 @@
             "halt",
             "activ",
             "sumo",
+            "e",
             "ligas",
             "mm",
             "atpdepend",
@@ -14826,7 +15076,8 @@
             "stabl",
             "purin",
             "present",
-            "posit"
+            "posit",
+            "c"
         ],
         "evidence": {}
     },
@@ -14884,15 +15135,18 @@
             "stroke",
             "patient",
             "prior",
+            "use",
             "direct",
             "oral",
             "anticoagul",
+            "higher",
             "risk",
             "inhospit",
             "mortal",
             "stroke",
             "patient",
             "prior",
+            "use",
             "warfarin"
         ],
         "evidence": {
@@ -14931,12 +15185,14 @@
             "perform",
             "poorli",
             "earli",
+            "year",
             "medic",
             "school",
             "increas",
             "risk",
             "profession",
             "misconduct",
+            "later",
             "career"
         ],
         "evidence": {
@@ -14969,11 +15225,15 @@
             "perform",
             "poorli",
             "earli",
+            "year",
             "medic",
             "school",
+            "less",
+            "like",
             "commit",
             "profession",
             "misconduct",
+            "later",
             "career"
         ],
         "evidence": {
@@ -15050,6 +15310,7 @@
             "patient",
             "orthostat",
             "hypertens",
+            "without",
             "cardiac",
             "conduct",
             "abnorm"
@@ -15067,6 +15328,7 @@
             "cell",
             "cooper",
             "gener",
+            "van",
             "gogh",
             "bundl",
             "slide",
@@ -15154,6 +15416,7 @@
             "nerv",
             "activ",
             "elev",
+            "throughout",
             "normal",
             "pregnanc"
         ],
@@ -15209,6 +15472,7 @@
             "nerv",
             "activ",
             "reduc",
+            "throughout",
             "normal",
             "pregnanc"
         ],
@@ -15503,6 +15767,7 @@
     {
         "num": "1139",
         "query": [
+            "take",
             "mg",
             "tocopheryl",
             "acet",
@@ -15531,11 +15796,13 @@
     {
         "num": "1141",
         "query": [
+            "take",
             "mg",
             "tocopheryl",
             "acet",
             "combin",
             "vitamin",
+            "c",
             "reduc",
             "risk",
             "prostat",
@@ -15562,6 +15829,7 @@
     {
         "num": "1142",
         "query": [
+            "take",
             "antidepres",
             "associ",
             "decreas",
@@ -15591,6 +15859,7 @@
             "incid",
             "rate",
             "type",
+            "ii",
             "diabet",
             "india"
         ],
@@ -15620,6 +15889,7 @@
     {
         "num": "1148",
         "query": [
+            "ten",
             "percent",
             "kidney",
             "cancer",
@@ -15654,6 +15924,7 @@
             "promot",
             "effici",
             "motil",
+            "along",
             "stromal",
             "surfac"
         ],
@@ -16186,6 +16457,7 @@
             "polymorph",
             "regul",
             "neighbor",
+            "c",
             "gene"
         ],
         "evidence": {}
@@ -16193,9 +16465,12 @@
     {
         "num": "1184",
         "query": [
+            "us",
             "health",
             "care",
             "system",
+            "save",
+            "billion",
             "patient",
             "wait",
             "kidney",
@@ -16232,6 +16507,7 @@
             "downward",
             "unequ",
             "select",
+            "larger",
             "outbreak"
         ],
         "evidence": {}
@@ -16340,6 +16616,7 @@
             "isoform",
             "switch",
             "isoform",
+            "b",
             "isoform",
             "dure",
             "hematopoiet",
@@ -16490,8 +16767,10 @@
     {
         "num": "1218",
         "query": [
+            "first",
             "mbt",
             "repeat",
+            "four",
             "malign",
             "brain",
             "tumor",
@@ -16578,6 +16857,7 @@
             "respons",
             "struggl",
             "remov",
+            "small",
             "number",
             "parasit"
         ],
@@ -16645,6 +16925,7 @@
             "suicid",
             "rate",
             "women",
+            "higher",
             "miscarriag",
             "live",
             "birth"
@@ -16667,6 +16948,7 @@
             "suicid",
             "rate",
             "women",
+            "lower",
             "miscarriag",
             "live",
             "birth"
@@ -16712,6 +16994,7 @@
         "num": "1230",
         "query": [
             "minor",
+            "g",
             "allel",
             "foxo",
             "downregul",
@@ -16733,9 +17016,11 @@
         "num": "1231",
         "query": [
             "minor",
+            "g",
             "allel",
             "foxo",
             "relat",
+            "less",
             "sever",
             "symptom",
             "crohn",
@@ -16756,6 +17041,7 @@
         "num": "1234",
         "query": [
             "minor",
+            "g",
             "allel",
             "foxo",
             "upregul",
@@ -16780,6 +17066,7 @@
             "larg",
             "white",
             "adipocyt",
+            "small",
             "brown",
             "adipocyt",
             "sign",
@@ -16801,6 +17088,7 @@
             "larg",
             "white",
             "adipocyt",
+            "small",
             "brown",
             "adipocyt",
             "sign",
@@ -16990,6 +17278,7 @@
             "neural",
             "progenitor",
             "differ",
+            "across",
             "speci"
         ],
         "evidence": {
@@ -17036,6 +17325,9 @@
             "peopl",
             "visual",
             "difficulti",
+            "two",
+            "time",
+            "higher",
             "lowincom",
             "countri",
             "highincom",
@@ -17146,6 +17438,7 @@
             "rvd",
             "loop",
             "transcriptionactiv",
+            "like",
             "tal",
             "effector",
             "specifi",
@@ -17174,6 +17467,7 @@
             "risk",
             "breast",
             "cancer",
+            "among",
             "parou",
             "women",
             "decreas",
@@ -17233,6 +17527,8 @@
             "prison",
             "harm",
             "themselv",
+            "ten",
+            "time",
             "male",
             "prison"
         ],
@@ -17269,6 +17565,7 @@
             "effector",
             "escherichia",
             "coli",
+            "e",
             "coli",
             "decor",
             "vgrg",
@@ -17309,6 +17606,7 @@
             "acceler",
             "approv",
             "encount",
+            "lower",
             "frequenc",
             "postmarket",
             "safeti",
@@ -17332,7 +17630,8 @@
             "correl",
             "hip",
             "fractur",
-            "statin"
+            "statin",
+            "use"
         ],
         "evidence": {
             "4687948": [
@@ -17368,6 +17667,7 @@
         "query": [
             "relat",
             "erythromycin",
+            "use",
             "hypertroph",
             "pylor",
             "stenosi"
@@ -17456,6 +17756,7 @@
         "query": [
             "relat",
             "erythromycin",
+            "use",
             "hypertroph",
             "pylor",
             "stenosi"
@@ -17482,6 +17783,7 @@
         "query": [
             "wa",
             "estim",
+            "million",
             "case",
             "pneumonia",
             "young",
@@ -17814,6 +18116,7 @@
             "tuberculosi",
             "incid",
             "occur",
+            "higher",
             "rate",
             "spars",
             "popul",
@@ -17912,11 +18215,14 @@
     {
         "num": "1333",
         "query": [
+            "two",
             "variant",
             "chromosom",
+            "q",
             "associ",
             "radiat",
             "therapyinduc",
+            "second",
             "malign",
             "pediatr",
             "hodgkin",
@@ -17982,6 +18288,7 @@
             "insert",
             "attempt",
             "necessari",
+            "given",
             "procedur"
         ],
         "evidence": {
@@ -18054,6 +18361,7 @@
         "num": "1345",
         "query": [
             "upregul",
+            "p",
             "pathway",
             "relat",
             "molecular",
@@ -18067,10 +18375,12 @@
     {
         "num": "1346",
         "query": [
+            "upon",
             "develop",
             "tyrosinekinas",
             "inhibitor",
             "resist",
+            "new",
             "mutat",
             "epiderm",
             "growth",
@@ -18101,6 +18411,7 @@
     {
         "num": "1347",
         "query": [
+            "upon",
             "viral",
             "challeng",
             "influenzaspecif",
@@ -18129,6 +18440,7 @@
     {
         "num": "1348",
         "query": [
+            "upon",
             "viral",
             "challeng",
             "influenzaspecif",
@@ -18188,6 +18500,7 @@
             "microtubul",
             "plusend",
             "grow",
+            "toward",
             "cell",
             "bodi",
             "neuron"
@@ -18220,6 +18533,7 @@
     {
         "num": "1355",
         "query": [
+            "v",
             "inhibit",
             "antitumor",
             "respons",
@@ -18281,6 +18595,7 @@
             "vareniclin",
             "monotherapi",
             "effect",
+            "week",
             "treatment",
             "compar",
             "combin",
@@ -18311,6 +18626,7 @@
             "affect",
             "posit",
             "migrat",
+            "b",
             "cell"
         ],
         "evidence": {
@@ -18337,6 +18653,7 @@
         "num": "1364",
         "query": [
             "venul",
+            "less",
             "signific",
             "tunica",
             "adventitia",
@@ -18506,12 +18823,14 @@
             "record",
             "wfr",
             "result",
+            "high",
             "complet",
             "sinc",
             "theyr",
             "cheap",
             "run",
             "impos",
+            "low",
             "particip",
             "burden"
         ],
@@ -18532,6 +18851,7 @@
             "costli",
             "run",
             "impos",
+            "high",
             "particip",
             "burden"
         ],
@@ -18540,10 +18860,12 @@
     {
         "num": "1376",
         "query": [
+            "whole",
             "brain",
             "radiotherapi",
             "increas",
             "occurr",
+            "new",
             "brain",
             "metastas"
         ],
@@ -18570,6 +18892,7 @@
             "women",
             "suscept",
             "death",
+            "due",
             "pneumonia",
             "compar",
             "men"
@@ -18589,11 +18912,14 @@
         "num": "1380",
         "query": [
             "women",
+            "lower",
             "birth",
             "weight",
+            "like",
             "develop",
             "breast",
             "cancer",
+            "later",
             "life"
         ],
         "evidence": {
@@ -18723,6 +19049,7 @@
         "num": "1390",
         "query": [
             "mcm",
+            "u",
             "requir",
             "proper",
             "decod",
@@ -18852,6 +19179,7 @@
     {
         "num": "1400",
         "query": [
+            "p",
             "ntr",
             "associ",
             "cell",
@@ -18859,6 +19187,7 @@
             "executor",
             "nade",
             "interact",
+            "p",
             "ntr",
             "death",
             "domain"
@@ -18884,6 +19213,7 @@
         "query": [
             "rprotein",
             "chaperon",
+            "found",
             "complex",
             "rprotein",
             "bind",
@@ -18988,6 +19318,7 @@
             "tripl",
             "mutant",
             "arabidopsi",
+            "make",
             "root",
             "meristem",
             "dure",
@@ -19032,6 +19363,7 @@
         "query": [
             "dimension",
             "biomateri",
+            "show",
             "induct",
             "properti"
         ],
@@ -19050,6 +19382,7 @@
             "consist",
             "rare",
             "variant",
+            "larger",
             "penetr",
             "effect",
             "common",
@@ -19097,6 +19430,8 @@
         "query": [
             "perinat",
             "mortal",
+            "due",
+            "low",
             "birth",
             "weight"
         ],
@@ -19107,6 +19442,7 @@
         "query": [
             "defici",
             "vitamin",
+            "b",
             "increas",
             "blood",
             "level",
@@ -19117,6 +19453,7 @@
     {
         "num": "42",
         "query": [
+            "high",
             "microerythrocyt",
             "count",
             "rais",
@@ -19220,6 +19557,7 @@
             "aldh",
             "express",
             "associ",
+            "better",
             "breast",
             "cancer",
             "outcom"
@@ -19355,6 +19693,7 @@
             "activ",
             "ppmd",
             "suppress",
+            "p",
             "function"
         ],
         "evidence": {
@@ -19392,12 +19731,14 @@
         "num": "75",
         "query": [
             "activ",
+            "h",
             "pylori",
             "ureas",
             "ha",
             "polymer",
             "structur",
             "compromis",
+            "two",
             "subunit",
             "urea",
             "ureb"
@@ -19408,6 +19749,7 @@
         "num": "94",
         "query": [
             "albendazol",
+            "use",
             "treat",
             "lymphat",
             "filariasi"
@@ -19539,6 +19881,7 @@
             "reduc",
             "rate",
             "tuberculosi",
+            "across",
             "broad",
             "rang",
             "cd",
@@ -19576,6 +19919,7 @@
         "num": "128",
         "query": [
             "arteriol",
+            "larger",
             "lumen",
             "diamet",
             "venul"
@@ -19590,8 +19934,11 @@
             "open",
             "access",
             "format",
+            "less",
+            "like",
             "cite",
-            "tradit"
+            "tradit",
+            "journal"
         ],
         "evidence": {
             "27768226": [
@@ -19630,8 +19977,10 @@
             "open",
             "access",
             "format",
+            "like",
             "cite",
-            "tradit"
+            "tradit",
+            "journal"
         ],
         "evidence": {
             "27768226": [
@@ -19732,6 +20081,7 @@
             "entrain",
             "strengthen",
             "peopl",
+            "see",
             "congruent",
             "visual",
             "auditori",
@@ -19787,6 +20137,7 @@
             "stem",
             "cell",
             "caus",
+            "higher",
             "rate",
             "opportunist",
             "infect",
@@ -19845,6 +20196,7 @@
             "stem",
             "cell",
             "ha",
+            "lower",
             "rate",
             "reject",
             "induct",
@@ -20104,6 +20456,7 @@
         "query": [
             "ccl",
             "absent",
+            "within",
             "dln"
         ],
         "evidence": {}
@@ -20132,6 +20485,7 @@
         "query": [
             "cr",
             "associ",
+            "higher",
             "methyl",
             "age"
         ],
@@ -20177,6 +20531,7 @@
             "predict",
             "postop",
             "mortal",
+            "follow",
             "coronari",
             "arteri",
             "bypass",
@@ -20298,6 +20653,7 @@
             "defici",
             "mutat",
             "drink",
+            "less",
             "noncarri"
         ],
         "evidence": {
@@ -20416,6 +20772,7 @@
             "undergo",
             "methionin",
             "restrict",
+            "may",
             "activ",
             "mirna"
         ],
@@ -20573,9 +20930,11 @@
             "bupropion",
             "lead",
             "significantli",
+            "higher",
             "longterm",
             "abstin",
             "rate",
+            "week",
             "vareniclin",
             "monotherapi"
         ],
@@ -20665,6 +21024,8 @@
             "crossov",
             "hot",
             "spot",
+            "found",
+            "within",
             "gene",
             "promot",
             "saccharomyc",
@@ -20711,6 +21072,7 @@
         "num": "298",
         "query": [
             "cytochrom",
+            "c",
             "releas",
             "mitochondri",
             "intermembran",
@@ -20771,6 +21133,7 @@
     {
         "num": "312",
         "query": [
+            "de",
             "novo",
             "assembl",
             "sequenc",
@@ -20828,6 +21191,7 @@
         "num": "327",
         "query": [
             "delet",
+            "v",
             "doe",
             "result",
             "spontan",
@@ -20942,8 +21306,10 @@
             "antibodi",
             "respons",
             "activ",
+            "b",
             "cell",
             "migrat",
+            "toward",
             "innerand",
             "outer",
             "paracort",
@@ -20989,6 +21355,7 @@
             "noncommunic",
             "diseas",
             "preval",
+            "low",
             "econom",
             "set"
         ],
@@ -21124,6 +21491,7 @@
             "femal",
             "carrier",
             "apolipoprotein",
+            "e",
             "apo",
             "allel",
             "increas",
@@ -21147,6 +21515,7 @@
             "flexibl",
             "molecul",
             "experi",
+            "greater",
             "steric",
             "hindranc",
             "tumor",
@@ -21217,11 +21586,13 @@
             "consequ",
             "genom",
             "alter",
+            "due",
             "myelodysplast",
             "syndrom",
             "md",
             "poorli",
             "understood",
+            "due",
             "lack",
             "anim",
             "model"
@@ -21292,6 +21663,7 @@
             "doe",
             "vari",
             "appreci",
+            "across",
             "genet",
             "ident",
             "cell"
@@ -21319,6 +21691,7 @@
         "num": "475",
         "query": [
             "glycolysi",
+            "one",
             "primari",
             "glycometabol",
             "pathway",
@@ -21363,7 +21736,8 @@
             "diabet",
             "mutant",
             "carrier",
-            "age"
+            "age",
+            "year"
         ],
         "evidence": {}
     },
@@ -21438,6 +21812,7 @@
     {
         "num": "513",
         "query": [
+            "high",
             "cardiopulmonari",
             "fit",
             "caus",
@@ -21459,6 +21834,7 @@
     {
         "num": "514",
         "query": [
+            "high",
             "dietari",
             "calcium",
             "intak",
@@ -21477,6 +21853,7 @@
     {
         "num": "516",
         "query": [
+            "high",
             "level",
             "crp",
             "reduc",
@@ -21508,6 +21885,7 @@
     {
         "num": "517",
         "query": [
+            "high",
             "level",
             "copeptin",
             "decreas",
@@ -21524,10 +21902,12 @@
             "troponin",
             "hsctt",
             "dosag",
+            "may",
             "diagnost",
             "onset",
             "symptom",
             "occur",
+            "less",
             "hour",
             "befor",
             "acut",
@@ -21609,6 +21989,7 @@
             "patient",
             "produc",
             "immunoglobulin",
+            "g",
             "igg",
             "antibodi",
             "crossreact",
@@ -21915,6 +22296,7 @@
             "popul",
             "saccharomyc",
             "cerevisia",
+            "whole",
             "chromosom",
             "aneuploidi",
             "veri",
@@ -21926,6 +22308,7 @@
         "num": "577",
         "query": [
             "mice",
+            "p",
             "chabaudi",
             "parasit",
             "abl",
@@ -21934,8 +22317,10 @@
             "earli",
             "infect",
             "inocul",
+            "lower",
             "number",
             "inocul",
+            "high",
             "number"
         ],
         "evidence": {}
@@ -21986,6 +22371,8 @@
             "control",
             "sox",
             "promot",
+            "less",
+            "ten",
             "percent",
             "cell",
             "green",
@@ -22005,6 +22392,7 @@
             "adult",
             "current",
             "remot",
+            "use",
             "adhd",
             "medic",
             "increas",
@@ -22097,6 +22485,7 @@
             "cervic",
             "cancer",
             "increas",
+            "due",
             "nationwid",
             "screen",
             "program",
@@ -22157,6 +22546,7 @@
             "increas",
             "vessel",
             "densiti",
+            "along",
             "reduct",
             "fibrosi",
             "decreas",
@@ -22180,6 +22570,7 @@
         "num": "623",
         "query": [
             "individu",
+            "low",
             "serum",
             "vitamin",
             "concentr",
@@ -22316,6 +22707,7 @@
         "num": "659",
         "query": [
             "ivermectin",
+            "use",
             "treat",
             "lymphat",
             "filariasi"
@@ -22326,6 +22718,7 @@
         "num": "660",
         "query": [
             "ivermectin",
+            "use",
             "treat",
             "onchocerciasi"
         ],
@@ -22371,6 +22764,7 @@
     {
         "num": "690",
         "query": [
+            "less",
             "gabones",
             "children",
             "schimmelpenningfeuersteinmim",
@@ -22500,6 +22894,7 @@
     {
         "num": "715",
         "query": [
+            "low",
             "express",
             "mira",
             "doe",
@@ -22516,6 +22911,7 @@
     {
         "num": "716",
         "query": [
+            "low",
             "express",
             "mira",
             "exert",
@@ -22528,11 +22924,14 @@
     {
         "num": "718",
         "query": [
+            "low",
             "nucleosom",
             "occup",
             "correl",
+            "low",
             "methyl",
             "level",
+            "across",
             "speci"
         ],
         "evidence": {
@@ -22554,6 +22953,7 @@
             "infect",
             "curliproduc",
             "bacteria",
+            "higher",
             "autoantibodi",
             "titer",
             "compar",
@@ -22608,6 +23008,7 @@
             "lyc",
             "hi",
             "monocyt",
+            "lower",
             "inflammatori",
             "capac",
             "compar",
@@ -22623,6 +23024,7 @@
             "lyc",
             "hi",
             "monocyt",
+            "lower",
             "inflammatori",
             "capac",
             "lyc",
@@ -22717,6 +23119,7 @@
             "suppli",
             "amino",
             "acid",
+            "via",
             "intracellular",
             "uptak",
             "protein"
@@ -22743,6 +23146,7 @@
             "modifi",
             "lysin",
             "residu",
+            "via",
             "acetyl"
         ],
         "evidence": {
@@ -22762,6 +23166,7 @@
             "mathemat",
             "model",
             "predict",
+            "use",
             "artemisininbas",
             "combin",
             "therapi",
@@ -22810,6 +23215,7 @@
             "result",
             "reduc",
             "efficaci",
+            "lower",
             "qualiti",
             "life",
             "compar",
@@ -22856,6 +23262,7 @@
             "interferon",
             "receptor",
             "exhibit",
+            "high",
             "resist",
             "experiment",
             "autoimmun",
@@ -22888,6 +23295,7 @@
         "num": "783",
         "query": [
             "mice",
+            "without",
             "ifn",
             "receptor",
             "resist",
@@ -22970,6 +23378,7 @@
             "age",
             "process",
             "affect",
+            "certain",
             "gene",
             "relat",
             "neurogenesi"
@@ -23288,13 +23697,16 @@
     {
         "num": "847",
         "query": [
+            "new",
             "drug",
             "tuberculosi",
+            "often",
             "penetr",
             "necrot",
             "portion",
             "tuberculosi",
             "lesion",
+            "high",
             "concentr"
         ],
         "evidence": {
@@ -23313,6 +23725,7 @@
         "query": [
             "noninvas",
             "ventil",
+            "use",
             "decreas",
             "inadequ",
             "respons",
@@ -23462,6 +23875,7 @@
             "occup",
             "ribosom",
             "incrna",
+            "make",
             "function",
             "peptid"
         ],
@@ -23501,6 +23915,7 @@
         "query": [
             "omnivor",
             "produc",
+            "less",
             "trimethylamin",
             "noxid",
             "dietari",
@@ -23567,6 +23982,7 @@
             "promot",
             "effici",
             "motil",
+            "along",
             "stromal",
             "surfac",
             "activ",
@@ -23663,6 +24079,7 @@
         "num": "921",
         "query": [
             "particip",
+            "six",
             "month",
             "physic",
             "activ",
@@ -23834,6 +24251,7 @@
             "hpv",
             "detect",
             "ha",
+            "higher",
             "longitudin",
             "sensit",
             "convent",
@@ -23905,6 +24323,7 @@
             "cytokin",
             "induc",
             "secondari",
+            "pro",
             "antiinflammatori",
             "mediat"
         ],
@@ -23918,6 +24337,7 @@
             "growth",
             "cone",
             "ubiquitin",
+            "higher",
             "rate",
             "protein",
             "cell",
@@ -23962,6 +24382,7 @@
         "query": [
             "pyridostatin",
             "destabil",
+            "g",
             "quadruplex",
             "telomer",
             "region"
@@ -24026,6 +24447,7 @@
             "rate",
             "govern",
             "fidel",
+            "two",
             "compon",
             "system"
         ],
@@ -24045,6 +24467,7 @@
         "query": [
             "rapid",
             "upregul",
+            "higher",
             "basal",
             "express",
             "interferoninduc",
@@ -24075,6 +24498,7 @@
         "query": [
             "rapid",
             "upregul",
+            "higher",
             "basal",
             "express",
             "interferoninduc",
@@ -24107,6 +24531,7 @@
             "mutat",
             "occur",
             "frequent",
+            "within",
             "ctcf",
             "anchor",
             "site",
@@ -24133,6 +24558,7 @@
             "regulatori",
             "cell",
             "associ",
+            "greater",
             "resist",
             "autoimmun",
             "diseas",
@@ -24196,6 +24622,7 @@
         "num": "1049",
         "query": [
             "ribosomopathi",
+            "low",
             "degre",
             "cell",
             "tissu",
@@ -24247,6 +24674,7 @@
             "sexual",
             "dysfunct",
             "result",
+            "use",
             "ssri",
             "antidepress"
         ],
@@ -24302,6 +24730,7 @@
             "drive",
             "activ",
             "sumo",
+            "e",
             "ligas",
             "mm",
             "atpdepend",
@@ -24344,15 +24773,18 @@
             "stroke",
             "patient",
             "prior",
+            "use",
             "direct",
             "oral",
             "anticoagul",
+            "lower",
             "risk",
             "inhospit",
             "mortal",
             "stroke",
             "patient",
             "prior",
+            "use",
             "warfarin"
         ],
         "evidence": {
@@ -24461,6 +24893,7 @@
             "cell",
             "ttreg",
             "lack",
+            "v",
             "adept",
             "suppress",
             "pathogen",
@@ -24533,6 +24966,7 @@
     {
         "num": "1140",
         "query": [
+            "take",
             "mg",
             "tocopheryl",
             "acet",
@@ -24568,6 +25002,7 @@
             "incid",
             "rate",
             "type",
+            "ii",
             "diabet",
             "india"
         ],
@@ -24600,6 +25035,7 @@
             "teach",
             "hospit",
             "provid",
+            "better",
             "care",
             "nonteach",
             "hospit"
@@ -24688,6 +25124,7 @@
             "ppr",
             "mda",
             "ha",
+            "two",
             "ntermin",
             "card",
             "domain"
@@ -24732,9 +25169,12 @@
     {
         "num": "1185",
         "query": [
+            "us",
             "health",
             "care",
             "system",
+            "save",
+            "million",
             "patient",
             "wait",
             "kidney",
@@ -24796,7 +25236,8 @@
             "dna",
             "data",
             "doubl",
-            "everi"
+            "everi",
+            "year"
         ],
         "evidence": {}
     },
@@ -24807,8 +25248,10 @@
             "densiti",
             "tatad",
             "complex",
+            "due",
             "structur",
             "rearrang",
+            "within",
             "class",
             "tatad",
             "complex",
@@ -24852,6 +25295,7 @@
             "achiev",
             "effect",
             "widespread",
+            "use",
             "secondari",
             "prevent",
             "strategi",
@@ -24906,6 +25350,7 @@
             "combin",
             "hkme",
             "hkme",
+            "found",
             "quiescent",
             "hair",
             "follicl",
@@ -24922,6 +25367,7 @@
             "isoform",
             "switch",
             "polariz",
+            "b",
             "isoform",
             "homogen",
             "isoform",
@@ -24973,8 +25419,11 @@
         "query": [
             "genom",
             "aberr",
+            "found",
             "matastes",
             "veri",
+            "similar",
+            "found",
             "primari",
             "tumor"
         ],
@@ -25016,6 +25465,7 @@
             "tet",
             "protein",
             "function",
+            "may",
             "dire",
             "biolog",
             "consequ",
@@ -25028,6 +25478,7 @@
         "num": "1232",
         "query": [
             "minor",
+            "g",
             "allel",
             "foxo",
             "relat",
@@ -25078,6 +25529,7 @@
             "polici",
             "ha",
             "success",
+            "lower",
             "popul",
             "growth"
         ],
@@ -25152,6 +25604,7 @@
             "risk",
             "breast",
             "cancer",
+            "among",
             "parou",
             "women",
             "increas",
@@ -25190,6 +25643,8 @@
             "prison",
             "harm",
             "themselv",
+            "ten",
+            "time",
             "femal",
             "prison"
         ],
@@ -25296,6 +25751,7 @@
             "effector",
             "escherichia",
             "coli",
+            "e",
             "coli",
             "carri",
             "toxic",
@@ -25377,6 +25833,7 @@
             "cluster",
             "induc",
             "nickel",
+            "ii",
             "ion"
         ],
         "evidence": {}
@@ -25385,6 +25842,7 @@
         "num": "1282",
         "query": [
             "therapeut",
+            "use",
             "drug",
             "dapson",
             "treat",
@@ -25403,7 +25861,8 @@
             "relationship",
             "hip",
             "fractur",
-            "statin"
+            "statin",
+            "use"
         ],
         "evidence": {
             "4687948": [
@@ -25529,6 +25988,7 @@
             "glial",
             "cell",
             "differenti",
+            "within",
             "host",
             "anim"
         ],
@@ -25594,6 +26054,7 @@
             "ucb",
             "cell",
             "maintain",
+            "high",
             "tcr",
             "divers",
             "transplant"
@@ -25640,7 +26101,8 @@
             "klink",
             "polyubiquitin",
             "moieti",
-            "pcna"
+            "pcna",
+            "k"
         ],
         "evidence": {
             "20231138": [
@@ -25690,6 +26152,7 @@
         "num": "1344",
         "query": [
             "upregul",
+            "p",
             "pathway",
             "relat",
             "molecular",
@@ -25716,6 +26179,7 @@
             "upregul",
             "mosgctl",
             "induc",
+            "upon",
             "infect",
             "west",
             "nile",
@@ -25744,6 +26208,7 @@
             "vareniclin",
             "monotherapi",
             "effect",
+            "week",
             "treatment",
             "compar",
             "combin",
@@ -25768,6 +26233,7 @@
         "num": "1362",
         "query": [
             "venul",
+            "larger",
             "lumen",
             "diamet",
             "arteriol"
@@ -25855,11 +26321,14 @@
         "num": "1379",
         "query": [
             "women",
+            "higher",
             "birth",
             "weight",
+            "like",
             "develop",
             "breast",
             "cancer",
+            "later",
             "life"
         ],
         "evidence": {

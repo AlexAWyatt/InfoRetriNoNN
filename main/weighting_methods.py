@@ -29,7 +29,7 @@ class tf_idf(base_weight):
         freq_doc = self.inverted_index[term][doc_id]
         
         # we are normalizing based on total length of the document - therefore this is the percentage of the documents terms that are the given term
-        return freq_doc/self.doc_lengths['doc_id']
+        return freq_doc/self.doc_lengths[doc_id]
     
     # TODO: Test that this is working and actually something we want to do
     # we are calculating the score of the query itself so we can build a vector that we can then use to calculate cosine similarity against the vectors for the document

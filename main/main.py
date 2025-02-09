@@ -34,16 +34,16 @@ def main():
 
     # Define which stopwords list to use
     # load in stopword files - 179 words
-    """ nltk.download('stopwords')
+    nltk.download('stopwords')
     nltk.download('punkt_tab')
     #using a set as it is easier to look up things from (in O(1) as opposed to O(n) from a list)
-    stop_words = set(stopwords.words('english')) """
+    stop_words = set(stopwords.words('english'))
 
     # read in StopWords List - 779 words
-    stop_words = set()
+    """ stop_words = set()
     with open(dataset_dir + "\\StopWords.txt") as file:
         for line in file:
-            stop_words.add(line.rstrip())
+            stop_words.add(line.rstrip()) """
 
     
     # Define which stemmer to use
@@ -81,6 +81,8 @@ def main():
     print("Done Inverted Index")
 
     weight_method = BM25(inverted_index, doc_lengths=collect_doc_lengths(documents))
+
+    # bm25 - cosine similarity
     search_e = SearchEngine(weight_method, similarity_measure="cos_sim")
     search_e.search(pair_usable_query(queries))
     print("Done Search 1")
@@ -88,8 +90,9 @@ def main():
     #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
     output = convert_output_form(search_e.results, "testbm_cos")
 
-    save_list_output(output, results_file_path + "\\test_bm_cos.test")
+    save_list_output(output, results_file_path + "\\nltk_stop_bm_cos2.test")
 
+    ## bm25 - raw score sum
     search_eraw = SearchEngine(weight_method, similarity_measure="raw_score")
     search_eraw.search(pair_usable_query(queries))
     print("Done Search 2")
@@ -97,7 +100,31 @@ def main():
     #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
     output = convert_output_form(search_eraw.results, "testbm_raw")
 
-    save_list_output(output, results_file_path + "\\test_bm_raw.test")
+    save_list_output(output, results_file_path + "\\nltk_stop_bm_raw2.test")
+
+    # --------------------------------------------------------
+    # tfidf - cosine similarity
+    weight_method = tf_idf(inverted_index, doc_lengths=collect_doc_lengths(documents))
+
+    # tfidf - cosine similarity
+    search_e = SearchEngine(weight_method, similarity_measure="cos_sim")
+    search_e.search(pair_usable_query(queries))
+    print("Done Search 3")
+
+    #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
+    output = convert_output_form(search_e.results, "tfidfbm_cos")
+
+    save_list_output(output, results_file_path + "\\nltk_stop_tfidf_cos2.test")
+
+    ## tfidf - raw score sum
+    search_eraw = SearchEngine(weight_method, similarity_measure="raw_score")
+    search_eraw.search(pair_usable_query(queries))
+    print("Done Search 4")
+
+    #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
+    output = convert_output_form(search_eraw.results, "tfidfbm_raw")
+
+    save_list_output(output, results_file_path + "\\nltk_stop_tfidf_raw2.test")
 
     #print(search_e.results)
     #save_output(search_e.results,results_file_path + "\\test_out.txt") #replace path for the path you want the output results in
