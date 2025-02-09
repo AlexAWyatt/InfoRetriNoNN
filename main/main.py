@@ -17,8 +17,8 @@ from nltk.stem.snowball import EnglishStemmer
 
 def main():
     # booleans to control parsing
-    parse_docs = True
-    parse_queries = True
+    parse_docs = False
+    parse_queries = False
 
     #dataset logistics
     absolute_base_path = dirname(dirname(__file__))
@@ -29,124 +29,107 @@ def main():
 
     # Processed files
     index_file_path = absolute_base_path + '\\data\\processed\\inverted_index.json'
-    preprocessed_docs_path = absolute_base_path + '\\data\\processed\\preprocessed_docs.json'
-    preprocessed_queries_path = absolute_base_path + '\\data\\processed\\preprocessed_queries.json'
+    
 
     # Define which stopwords list to use
     # load in stopword files - 179 words
     nltk.download('stopwords')
     nltk.download('punkt_tab')
     #using a set as it is easier to look up things from (in O(1) as opposed to O(n) from a list)
-    stop_words = set(stopwords.words('english'))
+    stop_words1 = set(stopwords.words('english'))
 
     # read in StopWords List - 779 words
-    """ stop_words = set()
+    stop_words2 = set()
     with open(dataset_dir + "\\StopWords.txt") as file:
         for line in file:
-            stop_words.add(line.rstrip()) """
+            stop_words2.add(line.rstrip())
+
+    # define stopwords
+    stop_words = [stop_words1, stop_words2]
+    stop_words_labels = ["nltk_wrds", "ink_wrds"]
 
     
-    # Define which stemmer to use
-    func_stemmer = PorterStemmer()
+    # Define stemmers
+    stemmers = [PorterStemmer(), LancasterStemmer(), EnglishStemmer()]
+    stemmer_labels = ["porter", "lancaster", "snowball"]
 
-    print("Parsing the dataset...")
-    documents=[]
+    parsed_docs = []
+    parsed_queries = []
+    descriptors = []
 
-    #getting the queries.
-    queries = parse_queries_from_file(query_file_path)
+    # preprocess documents and queries for all possible combos of stop words selection and stemmers
+    for stop_wordi in range(len(stop_words)):
+        for stemmeri in range(len(stemmers)):
+            descriptors.append(stop_words_labels[stop_wordi] + '_' + stemmer_labels[stemmeri])
 
-    #preprocessing the documents
-    if os.path.exists(preprocessed_docs_path) and not parse_docs:
-        print("Loading preprocessed documents...")
-        documents = load_preprocessed_data(preprocessed_docs_path)
-    else:
-        print("Preprocessing documents...")
-        # change params here to use different stemmer and different stop words list / to not use either
-        documents = preprocess_documents(parse_documents_from_file(doc_file_path), removestopwords=True, stopwords=stop_words, stem_text=True, stemmer = func_stemmer)
-        save_preprocessed_data(documents, preprocessed_docs_path)
+            preprocessed_docs_path = absolute_base_path + '\\data\\processed\\preprocessed_docs_' + stop_words_labels[stop_wordi] + '_' + stemmer_labels[stemmeri] + '.json'
+            preprocessed_queries_path = absolute_base_path + '\\data\\processed\\preprocessed_queries_' + stop_words_labels[stop_wordi] + '_' + stemmer_labels[stemmeri] + '.json'
+            print(f"Parsing the dataset with stopwords = {stop_words_labels[stop_wordi]} and stemmer = {stemmer_labels[stemmeri]}...")
+            documents=[]
+            queries = []
 
-    #Preprocessing the queries if they have not been preprocessed yet
-    if os.path.exists(preprocessed_queries_path) and not parse_queries:
-        print("Loading preprocessed queries...")
-        queries=load_preprocessed_data(preprocessed_queries_path)
-    else:
-        print("Preprocessing queries...")
-        queries = preprocess_queries(parse_queries_from_file(query_file_path), removestopwords=True, stopwords=stop_words, stem_text=True, stemmer = func_stemmer)
-        save_preprocessed_data(queries, preprocessed_queries_path)
+            
+
+            #preprocessing the documents
+            if os.path.exists(preprocessed_docs_path) and not parse_docs:
+                print("Loading preprocessed documents...")
+                documents = load_preprocessed_data(preprocessed_docs_path)
+            else:
+                print("Preprocessing documents...")
+                # change params here to use different stemmer and different stop words list / to not use either
+                documents = preprocess_documents(parse_documents_from_file(doc_file_path), removestopwords=True, stopwords=stop_words[stop_wordi], stem_text=True, stemmer = stemmers[stemmeri])
+                save_preprocessed_data(documents, preprocessed_docs_path)
+            
+            parsed_docs.append(documents)
+
+            #Preprocessing the queries if they have not been preprocessed yet
+            if os.path.exists(preprocessed_queries_path) and not parse_queries:
+                print("Loading preprocessed queries...")
+                queries=load_preprocessed_data(preprocessed_queries_path)
+            else:
+                print("Preprocessing queries...")
+                queries = preprocess_queries(parse_queries_from_file(query_file_path), removestopwords=True, stopwords=stop_words[stop_wordi], stem_text=True, stemmer = stemmers[stemmeri])
+                save_preprocessed_data(queries, preprocessed_queries_path)
+            
+            parsed_queries.append(queries)
     
     print("Done Preprocessing")
 
-    # testing - build inverted index
-    inverted_index = invert_index(documents)
-    print("Done Inverted Index")
+    # define similarity measures
+    sim_measures = ["cos_sim", "raw_score"]
 
-    weight_method = BM25(inverted_index, doc_lengths=collect_doc_lengths(documents))
+    inverted_indices = []
+    
+    # loop through all preprocessed documents and create an inverted index for each
+    for doc in parsed_docs:
+        # build inverted index
+        inverted_indices.append(invert_index(doc))
+    print("Done Inverted Indices")
 
-    # bm25 - cosine similarity
-    search_e = SearchEngine(weight_method, similarity_measure="cos_sim")
-    search_e.search(pair_usable_query(queries))
-    print("Done Search 1")
+    outputs = []
 
-    #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
-    output = convert_output_form(search_e.results, "testbm_cos")
+    count = 0
+    for invi in range(len(inverted_indices)):
+        # define weight methods
+        weight_mthds = [tf_idf(inverted_indices[invi], doc_lengths=collect_doc_lengths(parsed_docs[invi])), BM25(inverted_indices[invi], doc_lengths=collect_doc_lengths(parsed_docs[invi]))]
+        weight_mthds_lbls = ["tfidf", "bm25"]
 
-    save_list_output(output, results_file_path + "\\nltk_stop_bm_cos2.test")
+        for mthdi in range(len(weight_mthds)):
+            for sim_measure in sim_measures:
+                count += 1
 
-    ## bm25 - raw score sum
-    search_eraw = SearchEngine(weight_method, similarity_measure="raw_score")
-    search_eraw.search(pair_usable_query(queries))
-    print("Done Search 2")
+                search_e = SearchEngine(weight_mthds[mthdi], similarity_measure = sim_measure)
+                search_e.search(pair_usable_query(parsed_queries[invi]))
+                print(f"Done Search {count}")
 
-    #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
-    output = convert_output_form(search_eraw.results, "testbm_raw")
+                #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
+                output = convert_output_form(search_e.results, weight_mthds_lbls[mthdi] + '_' + sim_measure + '_' + descriptors[invi])
 
-    save_list_output(output, results_file_path + "\\nltk_stop_bm_raw2.test")
+                outputs.append(output)
 
-    # --------------------------------------------------------
-    # tfidf - cosine similarity
-    weight_method = tf_idf(inverted_index, doc_lengths=collect_doc_lengths(documents))
+                save_list_output(output, results_file_path + "\\" + weight_mthds_lbls[mthdi] + '_' + sim_measure + '_' + descriptors[invi] + ".test")
 
-    # tfidf - cosine similarity
-    search_e = SearchEngine(weight_method, similarity_measure="cos_sim")
-    search_e.search(pair_usable_query(queries))
-    print("Done Search 3")
-
-    #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
-    output = convert_output_form(search_e.results, "tfidfbm_cos")
-
-    save_list_output(output, results_file_path + "\\nltk_stop_tfidf_cos2.test")
-
-    ## tfidf - raw score sum
-    search_eraw = SearchEngine(weight_method, similarity_measure="raw_score")
-    search_eraw.search(pair_usable_query(queries))
-    print("Done Search 4")
-
-    #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
-    output = convert_output_form(search_eraw.results, "tfidfbm_raw")
-
-    save_list_output(output, results_file_path + "\\nltk_stop_tfidf_raw2.test")
-
-    #print(search_e.results)
-    #save_output(search_e.results,results_file_path + "\\test_out.txt") #replace path for the path you want the output results in
-    #save_inv_index(inverted_index,path) #replace path for the path you want the inverted index in
-    #once you have replaced the paths you can put the functions in the code
-
-#save the output
-def save_output(main_output,path): #inverted index we want to save, path to the file location
-    with open(path, 'w', encoding='utf-8') as file: #open a file at the path location
-        json.dump(main_output, file, indent=4) #put the output in the file
-
-#load a previous output that has been saved
-def load_output(path): #file path
-    with open(path, 'r', encoding='utf-8') as file: #open the file at the path location
-        prev_output=json.load(file) #previous output is the content of the file
-    return prev_output
-
-# save output of list
-def save_list_output(main_output, path):
-    with open(path, 'w', encoding = 'utf-8') as file:
-        for line in main_output:
-            file.write(f"{line}\n")
+    #save_inv_index(inverted_index,path) #replace path for the path you want to save inverted index to
 
 
 if __name__ == "__main__":

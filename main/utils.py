@@ -1,3 +1,5 @@
+import json
+
 # Create dictionary keyed using document numbers where values are the 
 # length of the given document in terms of tokens
 def collect_doc_lengths(documents): 
@@ -38,3 +40,20 @@ def convert_output_form(outputs, run_name):
             results.append(f"{query_id} Q0 {doc_id} {rank + 1} {score} {run_name}")
     
     return results
+
+#save the output
+def save_output(main_output,path): #inverted index we want to save, path to the file location
+    with open(path, 'w', encoding='utf-8') as file: #open a file at the path location
+        json.dump(main_output, file, indent=4) #put the output in the file
+
+#load a previous output that has been saved
+def load_output(path): #file path
+    with open(path, 'r', encoding='utf-8') as file: #open the file at the path location
+        prev_output=json.load(file) #previous output is the content of the file
+    return prev_output
+
+# save output of list
+def save_list_output(main_output, path):
+    with open(path, 'w', encoding = 'utf-8') as file:
+        for line in main_output:
+            file.write(f"{line}\n")
