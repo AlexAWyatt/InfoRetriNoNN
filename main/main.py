@@ -103,7 +103,7 @@ def main():
     # loop through all preprocessed documents and create an inverted index for each
     for doc in parsed_docs:
         # build inverted index
-        inverted_indices.append(invert_index(doc))
+        inverted_indices.append(invert_index_title(doc))
     print("Done Inverted Indices")
 
     outputs = []
@@ -123,11 +123,11 @@ def main():
                 print(f"Done Search {count}")
 
                 #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
-                output = convert_output_form(search_e.results, weight_mthds_lbls[mthdi] + '_' + sim_measure + '_' + descriptors[invi])
+                output = convert_output_form(search_e.results, "title_only_" + weight_mthds_lbls[mthdi] + '_' + sim_measure + '_' + descriptors[invi])
 
                 outputs.append(output)
 
-                save_list_output(output, results_file_path + "\\" + weight_mthds_lbls[mthdi] + '_' + sim_measure + '_' + descriptors[invi] + ".test")
+                save_list_output(output, results_file_path + "\\title_only_" + weight_mthds_lbls[mthdi] + '_' + sim_measure + '_' + descriptors[invi] + ".test")
 
     #save_inv_index(inverted_index,path) #replace path for the path you want to save inverted index to
 
