@@ -25,6 +25,7 @@ def main():
     dataset = absolute_base_path + "\\data\\scifact" #this is where we will change the dataset that we use
     doc_file_path = dataset + '\\corpus.jsonl'
     query_file_path = dataset + '\\queries.jsonl'
+    results_file_path = absolute_base_path + "\\eval\\trec_eval-9.0.7\\test"
 
     # Processed files
     index_file_path = absolute_base_path + '\\data\\processed\\inverted_index.json'
@@ -72,17 +73,35 @@ def main():
         print("Preprocessing queries...")
         queries = preprocess_queries(parse_queries_from_file(query_file_path), removestopwords=True, stopwords=stop_words, stem_text=True, stemmer = func_stemmer)
         save_preprocessed_data(queries, preprocessed_queries_path)
+    
+    print("Done Preprocessing")
 
     # testing - build inverted index
     inverted_index = invert_index(documents)
+    print("Done Inverted Index")
 
     weight_method = BM25(inverted_index, doc_lengths=collect_doc_lengths(documents))
     search_e = SearchEngine(weight_method, similarity_measure="cos_sim")
     search_e.search(pair_usable_query(queries))
+    print("Done Search 1")
 
-    print(search_e.results['9'])
-    "save_output(search_e.results,path)" #replace path for the path you want the output results in
-    "save_inv_index(inverted_index,path)" #replace path for the path you want the inverted index in
+    #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
+    output = convert_output_form(search_e.results, "testbm_cos")
+
+    save_list_output(output, results_file_path + "\\test_bm_cos.test")
+
+    search_eraw = SearchEngine(weight_method, similarity_measure="raw_score")
+    search_eraw.search(pair_usable_query(queries))
+    print("Done Search 2")
+
+    #convert_output_form(search_e.results, "test1").to_csv(results_file_path + "\\test_out.txt", header = None, index = None, sep = ' ')
+    output = convert_output_form(search_eraw.results, "testbm_raw")
+
+    save_list_output(output, results_file_path + "\\test_bm_raw.test")
+
+    #print(search_e.results)
+    #save_output(search_e.results,results_file_path + "\\test_out.txt") #replace path for the path you want the output results in
+    #save_inv_index(inverted_index,path) #replace path for the path you want the inverted index in
     #once you have replaced the paths you can put the functions in the code
 
 #save the output
@@ -95,6 +114,12 @@ def load_output(path): #file path
     with open(path, 'r', encoding='utf-8') as file: #open the file at the path location
         prev_output=json.load(file) #previous output is the content of the file
     return prev_output
+
+# save output of list
+def save_list_output(main_output, path):
+    with open(path, 'w', encoding = 'utf-8') as file:
+        for line in main_output:
+            file.write(f"{line}\n")
 
 
 if __name__ == "__main__":

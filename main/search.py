@@ -45,6 +45,8 @@ class SearchEngine:
             store = doc_scores[doc_id]
             if self.similarity_measure == "cos_sim":
                 similarities[doc_id] = calc_cos_similarity(query_vector, doc_scores[doc_id])
+            elif self.similarity_measure == "raw_score":
+                similarities[doc_id] = calc_raw_score(doc_scores[doc_id])
 
         #sort the documents in descending order
         ranked_docs = sorted(similarities.items(), key=lambda x:x[1], reverse=True)
@@ -59,10 +61,3 @@ class SearchEngine:
             #rank the documents based on the selected method for the given query
             ranked_docs = self.rank_documents(query_tokens, query_num)
             self.results[query_num] = {doc_id: score for doc_id, score in ranked_docs[:num_top_docs]}
-
-        """ for rank, (doc_id, score) in enumerate(ranked_docs[:num_top_docs]):  #llimit to top 'num_top_docs' results
-            result_line = f"{query_id} Q0 {doc_id} {rank + 1} {score:.4f} {run_name}"  #formatting
-            result_lines.append(result_line)
-            result_table[doc_id] = score
-
-        return result_lines, result_table """

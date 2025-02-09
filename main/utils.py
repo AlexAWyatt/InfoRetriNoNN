@@ -1,6 +1,3 @@
-import math
-import os
-
 # Create dictionary keyed using document numbers where values are the 
 # length of the given document in terms of tokens
 def collect_doc_lengths(documents): 
@@ -24,3 +21,20 @@ def pair_usable_query(queries):
         usable_queries[query['num']] = query['query']
     
     return usable_queries
+
+# convert output into form interpretable by trec_eval
+def convert_output_form(outputs, run_name):
+    results = []
+
+    for query in outputs:
+
+        query_id = query
+
+        for rank, returns in enumerate(outputs[query]):
+
+            doc_id = returns
+            score = round(outputs[query][returns],7)
+            
+            results.append(f"{query_id} Q0 {doc_id} {rank + 1} {score} {run_name}")
+    
+    return results

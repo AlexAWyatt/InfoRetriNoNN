@@ -25,3 +25,11 @@ def calc_cos_similarity(query_scores, doc_scores):
     denominator = np.linalg.norm(query_vector) * np.linalg.norm(doc_vector)
 
     return numerator/denominator if denominator != 0 else 0.0
+
+# TODO: check that this is working
+def calc_raw_score(doc_scores):
+    score = 0
+    for token in doc_scores:
+        score += doc_scores[token]
+    
+    return score
